@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Linter</title>
+    <style>
+        /* Styles to mimic Tailwind CSS classes, resolving CDN block */
+        :root {
+            --color-indigo-600: #4f46e5;
+            --color-gray-50: #f9fafb;
+            --color-gray-900: #111827;
+            --color-red-500: #ef4444;
+            --color-green-600: #10b981;
+            --color-white: #ffffff;
+            --color-gray-500: #6b7280;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: var(--color-gray-50);
+            font-size: 14px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .header {
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .issues-list {
+            flex-grow: 1;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
+
+        .issue-item {
+            display: flex;
+            flex-direction: column;
+            padding: 8px 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        
+        .issue-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .issue-type {
+            font-weight: 600;
+            color: var(--color-gray-900);
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .issue-detail {
+            color: var(--color-gray-500);
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .issue-layer {
+            font-style: italic;
+            color: #4b5563;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .btn {
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.15s;
+            border: none;
+            display: flex; /* For centering content like icons */
+            align-items: center;
+            gap: 4px;
+        }
+
+        .btn-primary {
+            background-color: var(--color-indigo-600);
+            color: var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background-color: #4338ca;
+        }
+
+        .btn-dark {
+            background-color: var(--color-gray-900);
+            color: var(--color-white);
+        }
+
+        .btn-dark:hover {
+            background-color: #374151;
+        }
+        
+        /* Icon styles (to replace the missing lightning icon) */
+        .icon-lightning {
+            width: 12px;
+            height: 12px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .message-box {
+            padding: 8px;
+            margin-top: 10px;
+            border-radius: 4px;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .message-success {
+            background-color: #d1fae5;
+            color: var(--color-green-600);
+        }
+
+        .message-error {
+            background-color: #fee2e2;
+            color: var(--color-red-500);
+        }
+        
+        .action-buttons button {
+            margin-left: 5px;
+        }
+        
+        .zoom-button {
+            display: inline-block;
+        }
+        
+        .fix-button {
+            display: none; /* Initially hidden, shown after zoom */
+        }
+        
+        .text-xs {
+            font-size: 0.75rem; /* 12px */
+        }
+        
+        .font-semibold {
+            font-weight: 600;
+        }
+        
+        .text-red-500 {
+            color: var(--color-red-500);
+        }
+        
+        /* Loading indicator for the analyse button */
+        .spinner {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 2px solid var(--color-white);
+            width: 12px;
+            height: 12px;
+            animation: spin 1s linear infinite;
+            display: none; /* Hidden by default */
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2 style="font-size: 18px; margin: 0;">Design Linter</h2>
+            <button id="analyse-btn" class="btn btn-primary">
+                <span id="analyse-icon">
+                    <!-- Simple SVG for the lightning icon -->
+                    <svg class="icon-lightning" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                </span>
+                <span id="analyse-text">Analyse Selection</span>
+                <span id="analyse-spinner" class="spinner"></span>
+            </button>
+        </div>
+
+        <div id="status-message" class="message-box" style="display:none;"></div>
+
+        <div id="issues-list" class="issues-list">
+            <!-- Issues will be dynamically inserted here -->
+            <p style="text-align: center; color: #9ca3af; margin-top: 20px;">Select layers and click "Analyse Selection".</p>
+        </div>
+    </div>
+
+    <script>
+        const analyseBtn = document.getElementById('analyse-btn');
+        const analyseText = document.getElementById('analyse-text');
+        const analyseIcon = document.getElementById('analyse-icon');
+        const analyseSpinner = document.getElementById('analyse-spinner');
+        const issuesList = document.getElementById('issues-list');
+        const statusMessage = document.getElementById('status-message');
+
+        function showStatus(message, status) {
+            statusMessage.textContent = message;
+            statusMessage.className = `message-box message-${status}`;
+            statusMessage.style.display = 'block';
+        }
+
+        function setAnalysisState(isAnalysing) {
+            analyseBtn.disabled = isAnalysing;
+            if (isAnalysing) {
+                analyseText.textContent = 'Analysing...';
+                analyseIcon.style.display = 'none';
+                analyseSpinner.style.display = 'inline-block';
+            } else {
+                analyseText.textContent = 'Analyse Selection';
+                analyseIcon.style.display = 'inline-block';
+                analyseSpinner.style.display = 'none';
+            }
+        }
+
+        function displayIssues(issues) {
+            issuesList.innerHTML = ''; // Clear existing issues
+            if (issues.length === 0) {
+                issuesList.innerHTML = '<p style="text-align: center; color: #9ca3af; margin-top: 20px;">Analysis complete. No design issues found! 🎉</p>';
+                return;
+            }
+
+            issues.forEach(issue => {
+                const item = document.createElement('div');
+                item.className = 'issue-item';
+                item.id = `issue-${issue.nodeId}`;
+                
+                let actionsHtml = '';
+                if (issue.fixable) {
+                    // Start with Zoom visible, Fix hidden
+                    actionsHtml = `
+                        <div class="action-buttons" data-node-id="${issue.nodeId}" data-issue-type="${issue.type}">
+                            <button class="btn zoom-button" onclick="zoomToLayer('${issue.nodeId}')">Zoom to Layer</button>
+                            <button class="btn btn-dark fix-button" onclick="applyFix('${issue.nodeId}', '${issue.type}')" style="display: none;">Apply Fix</button>
+                        </div>
+                    `;
+                } else {
+                     actionsHtml = `<button class="btn zoom-button" onclick="zoomToLayer('${issue.nodeId}')">Zoom to Layer</button>`;
+                }
+
+                item.innerHTML = `
+                    <div class="issue-header">
+                        <div style="flex: 1;">
+                            <div class="issue-type">${issue.type.replace('/', ' / ')}</div>
+                            <div class="issue-layer">Layer: ${issue.layer}</div>
+                        </div>
+                        ${actionsHtml}
+                    </div>
+                    <div class="issue-detail">${issue.detail}</div>
+                `;
+                issuesList.appendChild(item);
+            });
+        }
+
+        analyseBtn.onclick = () => {
+            setAnalysisState(true); // Show loading state
+            parent.postMessage({ pluginMessage: { type: 'run-analysis' } }, '*');
+            showStatus('Analysing selected layers...', 'default');
+        };
+
+        function zoomToLayer(nodeId) {
+            parent.postMessage({ pluginMessage: { type: 'zoom-to-layer', nodeId } }, '*');
+        }
+
+        function applyFix(nodeId, issueType) {
+            parent.postMessage({ pluginMessage: { type: 'apply-fix', nodeId, issueType } }, '*');
+        }
+
+        // --- Message Handlers for UI Synchronization ---
+        window.onmessage = (event) => {
+            const msg = event.data.pluginMessage;
+
+            if (msg.type === 'analysis-result') {
+                setAnalysisState(false); // Hide loading state
+                showStatus(msg.message, msg.status);
+                displayIssues(msg.issues);
+
+            } else if (msg.type === 'zoom-result') {
+                const issueElement = document.getElementById(`issue-${msg.nodeId}`);
+                if (issueElement && msg.status === 'success') {
+                    // On successful zoom, swap the button visibility
+                    const zoomButton = issueElement.querySelector('.zoom-button');
+                    const fixButton = issueElement.querySelector('.fix-button');
+                    
+                    if (zoomButton) zoomButton.style.display = 'none';
+                    if (fixButton) fixButton.style.display = 'inline-flex'; // Use inline-flex to align icon/text if needed
+                    
+                    showStatus(`Zoomed to layer: ${issueElement.querySelector('.issue-layer').textContent.replace('Layer: ', '')}`, 'success');
+                } else if (msg.status === 'error') {
+                     showStatus(msg.message, 'error');
+                }
+                
+            } else if (msg.type === 'fix-result') {
+                const issueElement = document.getElementById(`issue-${msg.nodeId}`);
+                if (issueElement) {
+                    if (msg.status === 'success') {
+                        // Fix succeeded: remove the issue from the list
+                        issueElement.remove();
+                        showStatus(msg.message, 'success');
+                        // Optionally re-run analysis to update counts/state if needed
+                        // analyseBtn.click();
+                    } else {
+                        // Fix failed (e.g., layer is locked, inside Auto Layout)
+                        const actionContainer = issueElement.querySelector('.action-buttons'); 
+                        if (actionContainer) {
+                            // Replace the buttons with the manual fix message
+                            actionContainer.innerHTML = `<span class="text-xs font-semibold text-red-500">${msg.message}</span>`;
+                        }
+                        showStatus(msg.message, 'error');
+                    }
+                }
+            }
+        };
+    </script>
+</body>
+</html>
