@@ -3,7 +3,6 @@
  * Checks selected layers against design system standards and tokens.
  */
 
-// Design system configuration - will be populated from Figma file
 interface DesignSystemConfig {
     colourTokens: Map<string, RGB>;
     textStyles: Map<string, CustomTextStyle>;
@@ -27,7 +26,6 @@ interface CustomTextStyle {
     textCase?: string;
 }
 
-// Default fallback values (will be overridden by actual design system)
 const DEFAULT_CONFIG: DesignSystemConfig = {
     colourTokens: new Map(),
     textStyles: new Map(),
@@ -51,7 +49,6 @@ interface MCPConfig {
  */
 async function loadDesignSystemViaMCP(): Promise<void> {
     try {
-        // Use global configuration from UI
         const mcpConfig = globalConfig;
 
         if (!mcpConfig.figmaToken || mcpConfig.figmaToken.trim() === '') {
@@ -60,11 +57,10 @@ async function loadDesignSystemViaMCP(): Promise<void> {
             return;
         }
 
-        // Try to load design system via Figma API with timeout
         try {
             const apiPromise = loadFigmaDesignSystem(mcpConfig);
             const timeoutPromise = new Promise<never>((_, reject) => {
-                setTimeout(() => reject(new Error('API timeout')), 5000); // 5 second timeout for API
+                setTimeout(() => reject(new Error('API timeout')), 5000);
             });
             
             await Promise.race([apiPromise, timeoutPromise]);
@@ -75,7 +71,6 @@ async function loadDesignSystemViaMCP(): Promise<void> {
         
     } catch (error) {
         console.error('Error loading design system via MCP:', error);
-        // Fallback to mock data
         await loadMockDesignSystem();
     }
 }
@@ -85,8 +80,6 @@ async function loadDesignSystemViaMCP(): Promise<void> {
  */
 async function loadMockDesignSystem(): Promise<void> {
     try {
-        // In a real implementation, this would load from the mockDesignSystem.json file
-        // For now, we'll hardcode the mock data structure
         const mockData = {
             colourTokens: new Map([
                 ["Primary/Blue/500", { r: 0.196, g: 0.275, b: 0.898 }],
@@ -175,18 +168,10 @@ async function loadMockDesignSystem(): Promise<void> {
             ])
         };
 
-        // Apply mock data to design system config
         designSystemConfig = mockData;
 
-        console.log('Mock design system loaded:', {
-            colours: designSystemConfig.colourTokens.size,
-            textStyles: designSystemConfig.textStyles.size,
-            components: designSystemConfig.componentTokens.size,
-            spacing: designSystemConfig.spacingTokens.size
-        });
     } catch (error) {
         console.error('Error loading mock design system:', error);
-        // Final fallback to local styles
         await loadLocalDesignSystem();
     }
 }
@@ -196,7 +181,6 @@ async function loadMockDesignSystem(): Promise<void> {
  */
 async function loadFigmaDesignSystem(config: MCPConfig): Promise<void> {
     try {
-        console.log('Attempting to load design system from Figma API...');
         
         // Get file data (timeout handled at higher level)
         const fileResponse = await fetch(`${config.baseUrl}/files/${config.fileKey}`, {
@@ -221,11 +205,6 @@ async function loadFigmaDesignSystem(config: MCPConfig): Promise<void> {
             await loadComponentsFromAPI(fileData.document, config);
         }
 
-        console.log('Design system loaded via MCP:', {
-            colours: designSystemConfig.colourTokens.size,
-            textStyles: designSystemConfig.textStyles.size,
-            components: designSystemConfig.componentTokens.size
-        });
 
     } catch (error) {
         console.error('Error loading from Figma API:', error);
@@ -345,11 +324,6 @@ async function loadLocalDesignSystem(): Promise<void> {
             designSystemConfig.componentTokens.set(componentSet.name, componentToken);
         }
 
-        console.log('Design system loaded from local file:', {
-            colours: designSystemConfig.colourTokens.size,
-            textStyles: designSystemConfig.textStyles.size,
-            components: designSystemConfig.componentTokens.size
-        });
     } catch (error) {
         console.error('Error loading local design system:', error);
     }
@@ -387,34 +361,21 @@ async function runAnalysis(selectedNodes: readonly SceneNode[]): Promise<DesignI
     const issues: DesignIssue[] = [];
     
     try {
-        console.log('Starting analysis...');
-        
-        // Load design system via MCP first
-        console.log('Loading design system...');
         await loadDesignSystemViaMCP();
-        console.log('Design system loaded successfully');
     } catch (error) {
         console.error('Error loading design system:', error);
-        // Continue with analysis even if design system loading fails
     }
     
-    // Helper to traverse all nodes, including nested children
     const traverse = (node: SceneNode | BaseNode) => { 
-        // Skip hidden nodes or non-scene nodes
         if (!('visible' in node && node.visible) && node.type !== 'DOCUMENT' && node.type !== 'PAGE') {
             return;
         }
 
-        // Rule 4: Colour/Token Check (Check for hardcoded colours instead of styles)
-        // Applies to nodes that can have fill colours (RECTANGLE, ELLIPSE, TEXT, etc.)
         if ('fills' in node && Array.isArray(node.fills)) {
-            // Check if a node uses a hardcoded fill colour instead of a style ID
             if (!node.fillStyleId) {
                 const solidFill = node.fills.find(f => f.type === 'SOLID' && f.visible);
                 
-                // Only flag if a hardcoded fill is present.
                 if (solidFill) {
-                    // Use specific issue type for text nodes
                     const issueType = node.type === 'TEXT' ? 'Text/Colour' : 'Colour/Token';
                     const detail = node.type === 'TEXT' 
                         ? 'Text uses hardcoded colour instead of design system token. Should use Functional/Carbon for text.'
@@ -431,14 +392,10 @@ async function runAnalysis(selectedNodes: readonly SceneNode[]): Promise<DesignI
             }
         }
 
-        // Typography check removed - now validates against design system text styles instead
         
-        // Rule 6: Primary Button Style Check
-        // Checks RECTANGLES named 'Button' or 'Btn' that don't use the primary colour style/token.
         if (node.name.toLowerCase().includes('button') || node.name.toLowerCase().includes('btn')) {
             if (node.type === "RECTANGLE" && "fills" in node && Array.isArray(node.fills)) {
                 
-                // Assume that if fillStyleId is present, it's tokenized (Rule 4 covers missing token)
                 if (!node.fillStyleId) {
                     const solidFill = node.fills.find(f => f.type === 'SOLID' && f.visible);
                     
@@ -497,8 +454,6 @@ async function runAnalysis(selectedNodes: readonly SceneNode[]): Promise<DesignI
         // If analysis fails entirely, log it and return any partial issues found.
     }
     
-    console.log('Analysis complete. Found', issues.length, 'issues');
-    console.log('Issues:', issues);
     
     return issues; // Returns the issues array synchronously collected.
 }

@@ -160,7 +160,3 @@ npm run lint:fix
 ## 📄 License
 
 This project is licensed under the MIT License.
-
-## 🔗 References
-
-Inspired by design linting best practices and the [design-lint](https://github.com/destefanis/design-lint) project.

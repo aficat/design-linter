@@ -7,7 +7,6 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://api.figma.com;">
     <title>Design Linter</title>
     <style>
-        /* Styles to mimic Tailwind CSS classes, resolving CDN block */
         :root {
             --color-indigo-600: #4f46e5;
             --color-gray-50: #f9fafb;
@@ -331,23 +330,13 @@
     </div>
 
     <script>
-        // --- Message Handlers for UI Synchronization ---
         window.onmessage = (event) => {
-            console.log('=== UI MESSAGE RECEIVED ===');
-            console.log('Full event:', event);
-            console.log('Event data:', event.data);
-            console.log('Plugin message:', event.data.pluginMessage);
             const msg = event.data.pluginMessage;
 
             if (msg.type === 'test') {
-                console.log('✅ UI message handler is working! Test message received:', msg.message);
             } else if (msg.type === 'analysis-result') {
-                console.log('Received analysis result:', msg);
-                console.log('Issues array:', msg.issues);
-                console.log('Issues length:', msg.issues ? msg.issues.length : 'undefined');
-                setAnalysisState(false); // Hide loading state
+                setAnalysisState(false);
                 showStatus(msg.message, msg.status);
-                console.log('About to call displayIssues with:', msg.issues);
                 displayIssues(msg.issues);
 
             } else if (msg.type === 'zoom-result') {
@@ -439,25 +428,13 @@
         }
 
         function displayIssues(issues) {
-            console.log('=== displayIssues called ===');
-            console.log('Displaying issues:', issues);
-            console.log('Issues count:', issues ? issues.length : 'undefined');
-            console.log('issuesList element:', issuesList);
-            console.log('issuesList exists:', !!issuesList);
-            
-            issuesList.innerHTML = ''; // Clear existing issues
-            console.log('Cleared issuesList innerHTML');
+            issuesList.innerHTML = '';
             
             if (!issues || issues.length === 0) {
-                console.log('No issues found, showing success message');
-                // issuesList.innerHTML = '<p style="text-align: center; color: #9ca3af; margin-top: 20px;">Analysis complete. No design issues found! 🎉</p>';
                 return;
             }
-            
-            console.log('Processing', issues.length, 'issues');
 
             issues.forEach((issue, index) => {
-                console.log(`Processing issue ${index}:`, issue);
                 const item = document.createElement('div');
                 item.className = 'issue-item';
                 item.id = `issue-${issue.nodeId}`;
@@ -485,16 +462,12 @@
                     </div>
                     <div class="issue-detail">${issue.detail}</div>
                 `;
-                console.log(`Adding issue ${index} to DOM:`, item);
                 issuesList.appendChild(item);
-                console.log(`Issue ${index} added to DOM successfully`);
             });
-            console.log('Finished processing all issues. Total items in issuesList:', issuesList.children.length);
         }
 
         analyseBtn.onclick = () => {
-            console.log('Analysis button clicked');
-            setAnalysisState(true); // Show loading state
+            setAnalysisState(true);
             parent.postMessage({ pluginMessage: { type: 'run-analysis' } }, '*');
             showStatus('Analysing selected layers...', 'default');
         };
@@ -564,32 +537,20 @@
         loadSavedConfig();
         
         // Send initial configuration to plugin
-        console.log('Sending initial config to plugin:', currentConfig);
         parent.postMessage({ pluginMessage: { type: 'config', config: currentConfig } }, '*');
         
         // Test if message handler is working by sending a test message
         setTimeout(() => {
-            console.log('Testing UI message handler...');
             window.postMessage({ pluginMessage: { type: 'test', message: 'UI message handler test' } }, '*');
         }, 1000);
 
-        // --- Message Handlers for UI Synchronization ---
         window.onmessage = (event) => {
-            console.log('=== UI MESSAGE RECEIVED ===');
-            console.log('Full event:', event);
-            console.log('Event data:', event.data);
-            console.log('Plugin message:', event.data.pluginMessage);
             const msg = event.data.pluginMessage;
 
             if (msg.type === 'test') {
-                console.log('✅ UI message handler is working! Test message received:', msg.message);
             } else if (msg.type === 'analysis-result') {
-                console.log('Received analysis result:', msg);
-                console.log('Issues array:', msg.issues);
-                console.log('Issues length:', msg.issues ? msg.issues.length : 'undefined');
-                setAnalysisState(false); // Hide loading state
+                setAnalysisState(false);
                 showStatus(msg.message, msg.status);
-                console.log('About to call displayIssues with:', msg.issues);
                 displayIssues(msg.issues);
 
             } else if (msg.type === 'zoom-result') {
