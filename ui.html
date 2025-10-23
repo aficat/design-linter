@@ -342,12 +342,11 @@
             } else if (msg.type === 'zoom-result') {
                 const issueElement = document.getElementById(`issue-${msg.nodeId}`);
                 if (issueElement && msg.status === 'success') {
-                    // On successful zoom, swap the button visibility
                     const zoomButton = issueElement.querySelector('.zoom-button');
                     const fixButton = issueElement.querySelector('.fix-button');
                     
                     if (zoomButton) zoomButton.style.display = 'none';
-                    if (fixButton) fixButton.style.display = 'inline-flex'; // Use inline-flex to align icon/text if needed
+                    if (fixButton) fixButton.style.display = 'inline-flex';
                     
                     showStatus(`Zoomed to layer: ${issueElement.querySelector('.issue-layer').textContent.replace('Layer: ', '')}`, 'success');
                 } else if (msg.status === 'error') {
@@ -366,7 +365,6 @@
                     }
                 }
             } else if (msg.type === 'selection-changed') {
-                // Reset all fix buttons when selection changes
                 const fixButtons = document.querySelectorAll('.fix-button');
                 fixButtons.forEach(button => {
                     button.style.display = 'none';
@@ -378,7 +376,6 @@
             }
         };
 
-        // Disable browser features that cause permission violations
         if (navigator.mediaDevices) {
             navigator.mediaDevices.getUserMedia = () => Promise.reject(new Error('Camera access disabled'));
         }
@@ -386,7 +383,6 @@
             navigator.clipboard.write = () => Promise.reject(new Error('Clipboard access disabled'));
         }
         
-        // Override permission queries to prevent violations
         const originalQuery = navigator.permissions?.query;
         if (originalQuery) {
             navigator.permissions.query = () => Promise.resolve({ state: 'denied' });
@@ -397,7 +393,6 @@
         const analyseIcon = document.getElementById('analyse-icon');
         const analyseSpinner = document.getElementById('analyse-spinner');
         
-        // Configuration elements
         const configSection = document.getElementById('configSection');
         const showConfigBtn = document.getElementById('showConfig');
         const toggleConfigBtn = document.getElementById('toggleConfig');
@@ -480,8 +475,6 @@
             parent.postMessage({ pluginMessage: { type: 'apply-fix', nodeId, issueType } }, '*');
         }
 
-        // --- Configuration Management ---
-        // Environment variables are injected during build process from .env file
         const envConfig = {
             figmaToken: '',
             fileKey: 'KkqX7OKAggFzvfB0CMUwBz',
@@ -556,12 +549,11 @@
             } else if (msg.type === 'zoom-result') {
                 const issueElement = document.getElementById(`issue-${msg.nodeId}`);
                 if (issueElement && msg.status === 'success') {
-                    // On successful zoom, swap the button visibility
                     const zoomButton = issueElement.querySelector('.zoom-button');
                     const fixButton = issueElement.querySelector('.fix-button');
                     
                     if (zoomButton) zoomButton.style.display = 'none';
-                    if (fixButton) fixButton.style.display = 'inline-flex'; // Use inline-flex to align icon/text if needed
+                    if (fixButton) fixButton.style.display = 'inline-flex';
                     
                     showStatus(`Zoomed to layer: ${issueElement.querySelector('.issue-layer').textContent.replace('Layer: ', '')}`, 'success');
                 } else if (msg.status === 'error') {
@@ -588,7 +580,6 @@
                     }
                 }
             } else if (msg.type === 'selection-changed') {
-                // Reset all fix buttons when selection changes
                 const fixButtons = document.querySelectorAll('.fix-button');
                 fixButtons.forEach(button => {
                     button.style.display = 'none';
