@@ -8,3 +8,8 @@ dist/
 code.js
 
 package-lock.json
+
+# Environment variables
+.env
+.env.local
+.env.*.local
