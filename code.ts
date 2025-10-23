@@ -3,7 +3,6 @@
  * Checks selected layers against design system standards and tokens.
  */
 
-// Design system configuration - will be populated from Figma file
 interface DesignSystemConfig {
     colourTokens: Map<string, RGB>;
     textStyles: Map<string, CustomTextStyle>;
@@ -27,7 +26,6 @@ interface CustomTextStyle {
     textCase?: string;
 }
 
-// Default fallback values (will be overridden by actual design system)
 const DEFAULT_CONFIG: DesignSystemConfig = {
     colourTokens: new Map(),
     textStyles: new Map(),
@@ -51,31 +49,25 @@ interface MCPConfig {
  */
 async function loadDesignSystemViaMCP(): Promise<void> {
     try {
-        // Use global configuration from UI
         const mcpConfig = globalConfig;
 
         if (!mcpConfig.figmaToken || mcpConfig.figmaToken.trim() === '') {
-            console.warn('No Figma token provided. Using mock design system data.');
             await loadMockDesignSystem();
             return;
         }
 
-        // Try to load design system via Figma API with timeout
         try {
             const apiPromise = loadFigmaDesignSystem(mcpConfig);
             const timeoutPromise = new Promise<never>((_, reject) => {
-                setTimeout(() => reject(new Error('API timeout')), 5000); // 5 second timeout for API
+                setTimeout(() => reject(new Error('API timeout')), 5000);
             });
             
             await Promise.race([apiPromise, timeoutPromise]);
         } catch (apiError) {
-            console.warn('Figma API connection failed or timed out. Using mock design system data:', apiError);
             await loadMockDesignSystem();
         }
         
     } catch (error) {
-        console.error('Error loading design system via MCP:', error);
-        // Fallback to mock data
         await loadMockDesignSystem();
     }
 }
@@ -85,8 +77,6 @@ async function loadDesignSystemViaMCP(): Promise<void> {
  */
 async function loadMockDesignSystem(): Promise<void> {
     try {
-        // In a real implementation, this would load from the mockDesignSystem.json file
-        // For now, we'll hardcode the mock data structure
         const mockData = {
             colourTokens: new Map([
                 ["Primary/Blue/500", { r: 0.196, g: 0.275, b: 0.898 }],
@@ -175,18 +165,9 @@ async function loadMockDesignSystem(): Promise<void> {
             ])
         };
 
-        // Apply mock data to design system config
         designSystemConfig = mockData;
 
-        console.log('Mock design system loaded:', {
-            colours: designSystemConfig.colourTokens.size,
-            textStyles: designSystemConfig.textStyles.size,
-            components: designSystemConfig.componentTokens.size,
-            spacing: designSystemConfig.spacingTokens.size
-        });
     } catch (error) {
-        console.error('Error loading mock design system:', error);
-        // Final fallback to local styles
         await loadLocalDesignSystem();
     }
 }
@@ -196,9 +177,7 @@ async function loadMockDesignSystem(): Promise<void> {
  */
 async function loadFigmaDesignSystem(config: MCPConfig): Promise<void> {
     try {
-        console.log('Attempting to load design system from Figma API...');
         
-        // Get file data (timeout handled at higher level)
         const fileResponse = await fetch(`${config.baseUrl}/files/${config.fileKey}`, {
             headers: {
                 'X-Figma-Token': config.figmaToken
@@ -211,24 +190,16 @@ async function loadFigmaDesignSystem(config: MCPConfig): Promise<void> {
 
         const fileData = await fileResponse.json();
         
-        // Extract styles from the file
         if (fileData.styles) {
             await loadStylesFromAPI(fileData.styles, config);
         }
 
-        // Extract components from the file
         if (fileData.document) {
             await loadComponentsFromAPI(fileData.document, config);
         }
 
-        console.log('Design system loaded via MCP:', {
-            colours: designSystemConfig.colourTokens.size,
-            textStyles: designSystemConfig.textStyles.size,
-            components: designSystemConfig.componentTokens.size
-        });
 
     } catch (error) {
-        console.error('Error loading from Figma API:', error);
         throw error;
     }
 }
@@ -242,7 +213,6 @@ async function loadStylesFromAPI(styles: any, config: MCPConfig): Promise<void> 
         const style = styleData as any;
         
         if (style.styleType === 'FILL') {
-            // Load paint style details
             const styleResponse = await fetch(`${config.baseUrl}/styles/${styleId}`, {
                 headers: {
                     'X-Figma-Token': config.figmaToken
@@ -256,7 +226,6 @@ async function loadStylesFromAPI(styles: any, config: MCPConfig): Promise<void> 
                 }
             }
         } else if (style.styleType === 'TEXT') {
-            // Load text style details
             const styleResponse = await fetch(`${config.baseUrl}/styles/${styleId}`, {
                 headers: {
                     'X-Figma-Token': config.figmaToken
@@ -282,7 +251,6 @@ async function loadStylesFromAPI(styles: any, config: MCPConfig): Promise<void> 
  * Load components from Figma API
  */
 async function loadComponentsFromAPI(document: any, config: MCPConfig): Promise<void> {
-    // Get components from the file
     const componentsResponse = await fetch(`${config.baseUrl}/files/${config.fileKey}/components`, {
         headers: {
             'X-Figma-Token': config.figmaToken
@@ -299,7 +267,7 @@ async function loadComponentsFromAPI(document: any, config: MCPConfig): Promise<
                     name: component.name,
                     type: getComponentType(component.name) as ComponentToken['type'],
                     requiredProperties: [],
-                    allowedVariants: [] // Would need additional API call to get variants
+                    allowedVariants: []
                 };
             designSystemConfig.componentTokens.set(component.name, componentToken);
         }
@@ -311,7 +279,6 @@ async function loadComponentsFromAPI(document: any, config: MCPConfig): Promise<
  */
 async function loadLocalDesignSystem(): Promise<void> {
     try {
-        // Load colour styles
         const colourStyles = figma.getLocalPaintStyles();
         for (const style of colourStyles) {
             if (style.paints.length > 0 && style.paints[0].type === 'SOLID') {
@@ -320,7 +287,6 @@ async function loadLocalDesignSystem(): Promise<void> {
             }
         }
 
-        // Load text styles
         const textStyles = figma.getLocalTextStyles();
         for (const style of textStyles) {
             const textStyle: CustomTextStyle = {
@@ -333,7 +299,6 @@ async function loadLocalDesignSystem(): Promise<void> {
             designSystemConfig.textStyles.set(style.name, textStyle);
         }
 
-        // Load component styles (from component sets)
         const componentSets = figma.root.findAll(node => node.type === 'COMPONENT_SET');
         for (const componentSet of componentSets) {
             const componentToken: ComponentToken = {
@@ -345,19 +310,10 @@ async function loadLocalDesignSystem(): Promise<void> {
             designSystemConfig.componentTokens.set(componentSet.name, componentToken);
         }
 
-        console.log('Design system loaded from local file:', {
-            colours: designSystemConfig.colourTokens.size,
-            textStyles: designSystemConfig.textStyles.size,
-            components: designSystemConfig.componentTokens.size
-        });
     } catch (error) {
-        console.error('Error loading local design system:', error);
     }
 }
 
-/**
- * Determines component type based on naming conventions
- */
 function getComponentType(name: string): ComponentToken['type'] {
     const lowerName = name.toLowerCase();
     if (lowerName.includes('button') || lowerName.includes('btn')) return 'button';
@@ -371,7 +327,7 @@ function getComponentType(name: string): ComponentToken['type'] {
  * Interface for issue reporting.
  */
 interface DesignIssue {
-    type: string; // e.g., 'Colour/Token', 'Typography', 'Button/Style'
+    type: string;
     layer: string;
     nodeId: string;
     detail: string;
@@ -387,34 +343,20 @@ async function runAnalysis(selectedNodes: readonly SceneNode[]): Promise<DesignI
     const issues: DesignIssue[] = [];
     
     try {
-        console.log('Starting analysis...');
-        
-        // Load design system via MCP first
-        console.log('Loading design system...');
         await loadDesignSystemViaMCP();
-        console.log('Design system loaded successfully');
     } catch (error) {
-        console.error('Error loading design system:', error);
-        // Continue with analysis even if design system loading fails
     }
     
-    // Helper to traverse all nodes, including nested children
     const traverse = (node: SceneNode | BaseNode) => { 
-        // Skip hidden nodes or non-scene nodes
         if (!('visible' in node && node.visible) && node.type !== 'DOCUMENT' && node.type !== 'PAGE') {
             return;
         }
 
-        // Rule 4: Colour/Token Check (Check for hardcoded colours instead of styles)
-        // Applies to nodes that can have fill colours (RECTANGLE, ELLIPSE, TEXT, etc.)
         if ('fills' in node && Array.isArray(node.fills)) {
-            // Check if a node uses a hardcoded fill colour instead of a style ID
             if (!node.fillStyleId) {
                 const solidFill = node.fills.find(f => f.type === 'SOLID' && f.visible);
                 
-                // Only flag if a hardcoded fill is present.
                 if (solidFill) {
-                    // Use specific issue type for text nodes
                     const issueType = node.type === 'TEXT' ? 'Text/Colour' : 'Colour/Token';
                     const detail = node.type === 'TEXT' 
                         ? 'Text uses hardcoded colour instead of design system token. Should use Functional/Carbon for text.'
@@ -431,14 +373,10 @@ async function runAnalysis(selectedNodes: readonly SceneNode[]): Promise<DesignI
             }
         }
 
-        // Typography check removed - now validates against design system text styles instead
         
-        // Rule 6: Primary Button Style Check
-        // Checks RECTANGLES named 'Button' or 'Btn' that don't use the primary colour style/token.
         if (node.name.toLowerCase().includes('button') || node.name.toLowerCase().includes('btn')) {
             if (node.type === "RECTANGLE" && "fills" in node && Array.isArray(node.fills)) {
                 
-                // Assume that if fillStyleId is present, it's tokenized (Rule 4 covers missing token)
                 if (!node.fillStyleId) {
                     const solidFill = node.fills.find(f => f.type === 'SOLID' && f.visible);
                     
@@ -447,7 +385,6 @@ async function runAnalysis(selectedNodes: readonly SceneNode[]): Promise<DesignI
                     if (solidFill) {
                         const { r, g, b } = solidFill.color;
                         
-                        // Check if it matches the primary button colour from design system
                         const primaryButtonColour = designSystemConfig.colourTokens.get('Primary/Blue/600');
                         const matchesPrimary = primaryButtonColour ? 
                             Math.abs(r - primaryButtonColour.r) < 0.01 &&
@@ -458,7 +395,6 @@ async function runAnalysis(selectedNodes: readonly SceneNode[]): Promise<DesignI
                             isIncorrectColour = true;
                         }
                     } else if (node.fills.length > 0) {
-                        // If it has a fill but it's not a visible solid fill, flag it.
                          isIncorrectColour = true;
                     }
                     
@@ -493,12 +429,9 @@ async function runAnalysis(selectedNodes: readonly SceneNode[]): Promise<DesignI
             traverse(node); // Synchronous call
         }
     } catch (e) {
-        console.error("Top-level analysis error:", e);
         // If analysis fails entirely, log it and return any partial issues found.
     }
     
-    console.log('Analysis complete. Found', issues.length, 'issues');
-    console.log('Issues:', issues);
     
     return issues; // Returns the issues array synchronously collected.
 }
@@ -510,7 +443,6 @@ async function runAnalysis(selectedNodes: readonly SceneNode[]): Promise<DesignI
  * @returns A status object indicating success or failure with a message.
  */
 async function applyFix(nodeId: string, issueType: string): Promise<{ status: 'success' | 'error', message: string }> {
-    console.log(`Attempting to apply fix for node ${nodeId}, type ${issueType}`);
     
     const node = await figma.getNodeByIdAsync(nodeId);
 
@@ -680,7 +612,6 @@ async function applyFix(nodeId: string, issueType: string): Promise<{ status: 's
         return { status: 'error', message: 'Fix logic did not apply any changes.' };
 
     } catch (error) {
-        console.error("Error during applyFix:", error);
         // FIX: Add type guard for safe access to error message
         const errorMessage = (error as any)?.message || 'An unknown error occurred.';
         return { status: 'error', message: `Runtime error during fix: ${errorMessage}` };
@@ -702,7 +633,6 @@ figma.ui.onmessage = async (msg) => {
     if (msg.type === 'config') {
         // Store configuration from UI
         globalConfig = msg.config;
-        console.log('Configuration received:', globalConfig);
         
     } else if (msg.type === 'run-analysis') {
         const selection = figma.currentPage.selection;
@@ -715,7 +645,6 @@ figma.ui.onmessage = async (msg) => {
             status = 'error';
         } else {
             try {
-                console.log('Starting analysis for', selection.length, 'selected nodes');
                 
                 // Add timeout to prevent hanging
                 const analysisPromise = runAnalysis(selection as SceneNode[]);
@@ -731,9 +660,7 @@ figma.ui.onmessage = async (msg) => {
                     message = 'Analysis complete. No design issues found!';
                 }
                 
-                console.log('Analysis completed successfully');
             } catch (error) {
-                console.error('Analysis failed:', error);
                 const errorMessage = error instanceof Error ? error.message : 'Unknown error';
                 message = `Analysis failed: ${errorMessage}`;
                 status = 'error';
@@ -742,7 +669,6 @@ figma.ui.onmessage = async (msg) => {
         }
 
         // Send results back to UI
-        console.log('Sending analysis result to UI:', { issues: issues.length, message, status });
         figma.ui.postMessage({ type: 'analysis-result', issues, message, status });
         
     } else if (msg.type === 'zoom-to-layer') {
