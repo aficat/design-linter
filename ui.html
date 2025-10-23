@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), clipboard-write=(), display-capture=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), speaker=()">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://api.figma.com;">
     <title>Design Linter</title>
     <style>
         /* Styles to mimic Tailwind CSS classes, resolving CDN block */
@@ -176,20 +178,148 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        
+        /* Configuration Section Styles */
+        .config-section {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 10px 0;
+        }
+        
+        .config-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        
+        .config-header h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+        }
+        
+        .config-content {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .config-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .config-item label {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .config-item input {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .config-item small {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .config-item small a {
+            color: #4f46e5;
+            text-decoration: none;
+        }
+        
+        .config-item small a:hover {
+            text-decoration: underline;
+        }
+        
+        .config-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        
+        .config-toggle {
+            text-align: center;
+            margin: 10px 0;
+        }
+        
+        .config-toggle button {
+            font-size: 12px;
+            padding: 6px 12px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <h2 style="font-size: 18px; margin: 0;">Design Linter</h2>
-            <button id="analyse-btn" class="btn btn-primary">
-                <span id="analyse-icon">
-                    <!-- Simple SVG for the lightning icon -->
-                    <svg class="icon-lightning" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
-                </span>
-                <span id="analyse-text">Analyse Selection</span>
-                <span id="analyse-spinner" class="spinner"></span>
-            </button>
+            <div style="display: flex; gap: 8px; align-items: center;">
+                <button id="analyse-btn" class="btn btn-primary">
+                    <span id="analyse-icon">
+                        <!-- Simple SVG for the lightning icon -->
+                        <svg class="icon-lightning" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                    </span>
+                    <span id="analyse-text">Analyse Selection</span>
+                    <span id="analyse-spinner" class="spinner"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Configuration Section -->
+        <div id="configSection" class="config-section" style="display: none;">
+            <div class="config-header">
+                <h3>Configuration</h3>
+                <button id="toggleConfig" class="btn btn-secondary">Hide Config</button>
+            </div>
+            <div class="config-content">
+                <div class="config-item">
+                    <label for="figmaToken">Figma Token:</label>
+                    <input type="password" id="figmaToken" placeholder="Enter your Figma personal access token" />
+                    <small>Get your token from <a href="https://www.figma.com/developers/api#authentication" target="_blank">Figma Developer Settings</a></small>
+                </div>
+                <div class="config-item">
+                    <label for="fileKey">File Key:</label>
+                    <input type="text" id="fileKey" value="KkqX7OKAggFzvfB0CMUwBz" />
+                    <small>Design Kit file key</small>
+                </div>
+                <div class="config-actions">
+                    <button id="saveConfig" class="btn btn-primary">Save Configuration</button>
+                    <button id="loadFromEnv" class="btn btn-secondary">Load from .env</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="config-toggle">
+            <button id="showConfig" class="btn btn-secondary">⚙️ Configuration</button>
+        </div>
+
+        <!-- MCP Settings Modal -->
+        <div id="settings-modal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+            <div style="background: white; padding: 20px; border-radius: 8px; max-width: 400px; width: 90%;">
+                <h3 style="margin: 0 0 15px 0;">MCP Configuration</h3>
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px; font-weight: 600;">Figma Personal Access Token:</label>
+                    <input type="password" id="figma-token" placeholder="Enter your Figma token" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                    <small style="color: #666;">Get your token from Figma → Settings → Account → Personal Access Tokens</small>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px; font-weight: 600;">Design System File Key:</label>
+                    <input type="text" id="file-key" value="KkqX7OKAggFzvfB0CMUwBz" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                    <small style="color: #666;">The file key from your Figma design system URL</small>
+                </div>
+                <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                    <button id="cancel-settings" class="btn btn-dark">Cancel</button>
+                    <button id="save-settings" class="btn btn-primary">Save Settings</button>
+                </div>
+            </div>
         </div>
 
         <div id="status-message" class="message-box" style="display:none;"></div>
@@ -201,10 +331,91 @@
     </div>
 
     <script>
+        // --- Message Handlers for UI Synchronization ---
+        window.onmessage = (event) => {
+            console.log('=== UI MESSAGE RECEIVED ===');
+            console.log('Full event:', event);
+            console.log('Event data:', event.data);
+            console.log('Plugin message:', event.data.pluginMessage);
+            const msg = event.data.pluginMessage;
+
+            if (msg.type === 'test') {
+                console.log('✅ UI message handler is working! Test message received:', msg.message);
+            } else if (msg.type === 'analysis-result') {
+                console.log('Received analysis result:', msg);
+                console.log('Issues array:', msg.issues);
+                console.log('Issues length:', msg.issues ? msg.issues.length : 'undefined');
+                setAnalysisState(false); // Hide loading state
+                showStatus(msg.message, msg.status);
+                console.log('About to call displayIssues with:', msg.issues);
+                displayIssues(msg.issues);
+
+            } else if (msg.type === 'zoom-result') {
+                const issueElement = document.getElementById(`issue-${msg.nodeId}`);
+                if (issueElement && msg.status === 'success') {
+                    // On successful zoom, swap the button visibility
+                    const zoomButton = issueElement.querySelector('.zoom-button');
+                    const fixButton = issueElement.querySelector('.fix-button');
+                    
+                    if (zoomButton) zoomButton.style.display = 'none';
+                    if (fixButton) fixButton.style.display = 'inline-flex'; // Use inline-flex to align icon/text if needed
+                    
+                    showStatus(`Zoomed to layer: ${issueElement.querySelector('.issue-layer').textContent.replace('Layer: ', '')}`, 'success');
+                } else if (msg.status === 'error') {
+                     showStatus(msg.message, 'error');
+                }
+                
+            } else if (msg.type === 'fix-result') {
+                const issueElement = document.getElementById(`issue-${msg.nodeId}`);
+                if (issueElement) {
+                    if (msg.status === 'success') {
+                        issueElement.style.opacity = '0.5';
+                        issueElement.style.textDecoration = 'line-through';
+                        showStatus(`Fix applied to ${issueElement.querySelector('.issue-layer').textContent.replace('Layer: ', '')}`, 'success');
+                    } else {
+                        showStatus(msg.message, 'error');
+                    }
+                }
+            } else if (msg.type === 'selection-changed') {
+                // Reset all fix buttons when selection changes
+                const fixButtons = document.querySelectorAll('.fix-button');
+                fixButtons.forEach(button => {
+                    button.style.display = 'none';
+                });
+                const zoomButtons = document.querySelectorAll('.zoom-button');
+                zoomButtons.forEach(button => {
+                    button.style.display = 'inline-flex';
+                });
+            }
+        };
+
+        // Disable browser features that cause permission violations
+        if (navigator.mediaDevices) {
+            navigator.mediaDevices.getUserMedia = () => Promise.reject(new Error('Camera access disabled'));
+        }
+        if (navigator.clipboard) {
+            navigator.clipboard.write = () => Promise.reject(new Error('Clipboard access disabled'));
+        }
+        
+        // Override permission queries to prevent violations
+        const originalQuery = navigator.permissions?.query;
+        if (originalQuery) {
+            navigator.permissions.query = () => Promise.resolve({ state: 'denied' });
+        }
+
         const analyseBtn = document.getElementById('analyse-btn');
         const analyseText = document.getElementById('analyse-text');
         const analyseIcon = document.getElementById('analyse-icon');
         const analyseSpinner = document.getElementById('analyse-spinner');
+        
+        // Configuration elements
+        const configSection = document.getElementById('configSection');
+        const showConfigBtn = document.getElementById('showConfig');
+        const toggleConfigBtn = document.getElementById('toggleConfig');
+        const saveConfigBtn = document.getElementById('saveConfig');
+        const loadFromEnvBtn = document.getElementById('loadFromEnv');
+        const figmaTokenInput = document.getElementById('figmaToken');
+        const fileKeyInput = document.getElementById('fileKey');
         const issuesList = document.getElementById('issues-list');
         const statusMessage = document.getElementById('status-message');
 
@@ -228,13 +439,25 @@
         }
 
         function displayIssues(issues) {
+            console.log('=== displayIssues called ===');
+            console.log('Displaying issues:', issues);
+            console.log('Issues count:', issues ? issues.length : 'undefined');
+            console.log('issuesList element:', issuesList);
+            console.log('issuesList exists:', !!issuesList);
+            
             issuesList.innerHTML = ''; // Clear existing issues
-            if (issues.length === 0) {
-                issuesList.innerHTML = '<p style="text-align: center; color: #9ca3af; margin-top: 20px;">Analysis complete. No design issues found! 🎉</p>';
+            console.log('Cleared issuesList innerHTML');
+            
+            if (!issues || issues.length === 0) {
+                console.log('No issues found, showing success message');
+                // issuesList.innerHTML = '<p style="text-align: center; color: #9ca3af; margin-top: 20px;">Analysis complete. No design issues found! 🎉</p>';
                 return;
             }
+            
+            console.log('Processing', issues.length, 'issues');
 
-            issues.forEach(issue => {
+            issues.forEach((issue, index) => {
+                console.log(`Processing issue ${index}:`, issue);
                 const item = document.createElement('div');
                 item.className = 'issue-item';
                 item.id = `issue-${issue.nodeId}`;
@@ -262,11 +485,15 @@
                     </div>
                     <div class="issue-detail">${issue.detail}</div>
                 `;
+                console.log(`Adding issue ${index} to DOM:`, item);
                 issuesList.appendChild(item);
+                console.log(`Issue ${index} added to DOM successfully`);
             });
+            console.log('Finished processing all issues. Total items in issuesList:', issuesList.children.length);
         }
 
         analyseBtn.onclick = () => {
+            console.log('Analysis button clicked');
             setAnalysisState(true); // Show loading state
             parent.postMessage({ pluginMessage: { type: 'run-analysis' } }, '*');
             showStatus('Analysing selected layers...', 'default');
@@ -280,13 +507,89 @@
             parent.postMessage({ pluginMessage: { type: 'apply-fix', nodeId, issueType } }, '*');
         }
 
+        // --- Configuration Management ---
+        // Environment variables are injected during build process from .env file
+        const envConfig = {
+            figmaToken: '',
+            fileKey: 'KkqX7OKAggFzvfB0CMUwBz',
+            baseUrl: 'https://api.figma.com/v1'
+        };
+
+        let currentConfig = {
+            figmaToken: envConfig.figmaToken,
+            fileKey: envConfig.fileKey,
+            baseUrl: envConfig.baseUrl
+        };
+
+        // Load saved configuration (localStorage disabled in Figma plugins)
+        function loadSavedConfig() {
+            // localStorage is disabled in Figma plugins, so we use the injected config
+            figmaTokenInput.value = currentConfig.figmaToken;
+            fileKeyInput.value = currentConfig.fileKey;
+        }
+
+        // Save configuration (localStorage disabled in Figma plugins)
+        function saveConfig() {
+            currentConfig.figmaToken = figmaTokenInput.value;
+            currentConfig.fileKey = fileKeyInput.value;
+            
+            // Send updated configuration to plugin
+            parent.postMessage({ pluginMessage: { type: 'config', config: currentConfig } }, '*');
+            
+            showStatus('Configuration updated!', 'success');
+        }
+
+        // Load configuration from .env file (simulated)
+        function loadFromEnv() {
+            // In a real implementation, this would read from a .env file
+            // For now, we'll show a message about creating the .env file
+            showStatus('To use .env file, create a .env file in your project root with FIGMA_TOKEN=your_token_here', 'error');
+        }
+
+        // Configuration event listeners
+        showConfigBtn.onclick = () => {
+            configSection.style.display = 'block';
+            showConfigBtn.style.display = 'none';
+        };
+
+        toggleConfigBtn.onclick = () => {
+            configSection.style.display = 'none';
+            showConfigBtn.style.display = 'block';
+        };
+
+        saveConfigBtn.onclick = saveConfig;
+        loadFromEnvBtn.onclick = loadFromEnv;
+
+        // Initialize configuration
+        loadSavedConfig();
+        
+        // Send initial configuration to plugin
+        console.log('Sending initial config to plugin:', currentConfig);
+        parent.postMessage({ pluginMessage: { type: 'config', config: currentConfig } }, '*');
+        
+        // Test if message handler is working by sending a test message
+        setTimeout(() => {
+            console.log('Testing UI message handler...');
+            window.postMessage({ pluginMessage: { type: 'test', message: 'UI message handler test' } }, '*');
+        }, 1000);
+
         // --- Message Handlers for UI Synchronization ---
         window.onmessage = (event) => {
+            console.log('=== UI MESSAGE RECEIVED ===');
+            console.log('Full event:', event);
+            console.log('Event data:', event.data);
+            console.log('Plugin message:', event.data.pluginMessage);
             const msg = event.data.pluginMessage;
 
-            if (msg.type === 'analysis-result') {
+            if (msg.type === 'test') {
+                console.log('✅ UI message handler is working! Test message received:', msg.message);
+            } else if (msg.type === 'analysis-result') {
+                console.log('Received analysis result:', msg);
+                console.log('Issues array:', msg.issues);
+                console.log('Issues length:', msg.issues ? msg.issues.length : 'undefined');
                 setAnalysisState(false); // Hide loading state
                 showStatus(msg.message, msg.status);
+                console.log('About to call displayIssues with:', msg.issues);
                 displayIssues(msg.issues);
 
             } else if (msg.type === 'zoom-result') {
@@ -323,6 +626,16 @@
                         showStatus(msg.message, 'error');
                     }
                 }
+            } else if (msg.type === 'selection-changed') {
+                // Reset all fix buttons when selection changes
+                const fixButtons = document.querySelectorAll('.fix-button');
+                fixButtons.forEach(button => {
+                    button.style.display = 'none';
+                });
+                const zoomButtons = document.querySelectorAll('.zoom-button');
+                zoomButtons.forEach(button => {
+                    button.style.display = 'inline-flex';
+                });
             }
         };
     </script>

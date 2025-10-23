@@ -1,0 +1,3813 @@
+{
+  "designSystem": {
+    "name": "Design Kit - Master",
+    "version": "1.1.0",
+    "description": "Design System",
+    "colourTokens": {
+      "Functional/White": { "r": 1, "g": 1, "b": 1 },
+      "Functional/Smoke grey": { "r": 0.98, "g": 0.98, "b": 0.98 },
+      "Functional/Metal grey": { "r": 0.96, "g": 0.96, "b": 0.96 },
+      "Functional/Stone grey": { "r": 0.94, "g": 0.94, "b": 0.94 },
+      "Functional/Steel grey": { "r": 0.92, "g": 0.92, "b": 0.92 },
+      "Functional/Slate grey": { "r": 0.9, "g": 0.9, "b": 0.9 },
+      "Functional/Carbon": { "r": 0.1, "g": 0.1, "b": 0.1 },
+      "Status/Lava red 100": { "r": 0.8, "g": 0.2, "b": 0.2 },
+      "Status/Lava red 5": { "r": 0.98, "g": 0.95, "b": 0.95 },
+      "Status/Ocean blue 100": { "r": 0.2, "g": 0.4, "b": 0.8 },
+      "Status/Ocean blue 10": { "r": 0.95, "g": 0.97, "b": 1 },
+      "Status/Tropical green 100": { "r": 0.2, "g": 0.7, "b": 0.3 },
+      "Status/Tropical green 5": { "r": 0.95, "g": 0.98, "b": 0.95 },
+      "Status/Ginger": { "r": 0.9, "g": 0.6, "b": 0.2 },
+      "Primary/40": { "r": 0.9, "g": 0.94, "b": 1 },
+      "Primary/60": { "r": 0.8, "g": 0.88, "b": 1 },
+      "Primary/80": { "r": 0.6, "g": 0.76, "b": 1 },
+      "Pine green/20": { "r": 0.9, "g": 0.96, "b": 0.9 },
+      "Pine green/30": { "r": 0.85, "g": 0.94, "b": 0.85 },
+      "Pine green/40": { "r": 0.8, "g": 0.92, "b": 0.8 },
+      "Pine green/50": { "r": 0.75, "g": 0.9, "b": 0.75 },
+      "Pine green/60": { "r": 0.7, "g": 0.88, "b": 0.7 },
+      "Pine green/70": { "r": 0.65, "g": 0.86, "b": 0.65 },
+      "Pine green/80": { "r": 0.6, "g": 0.84, "b": 0.6 },
+      "Pine green/90": { "r": 0.55, "g": 0.82, "b": 0.55 },
+      "Pine green/100": { "r": 0.5, "g": 0.8, "b": 0.5 },
+      "Turquoise/10": { "r": 0.95, "g": 0.98, "b": 0.98 },
+      "Turquoise/20": { "r": 0.9, "g": 0.96, "b": 0.96 },
+      "Turquoise/30": { "r": 0.85, "g": 0.94, "b": 0.94 },
+      "Turquoise/40": { "r": 0.8, "g": 0.92, "b": 0.92 },
+      "Turquoise/50": { "r": 0.75, "g": 0.9, "b": 0.9 },
+      "Turquoise/60": { "r": 0.7, "g": 0.88, "b": 0.88 },
+      "Turquoise/70": { "r": 0.65, "g": 0.86, "b": 0.86 },
+      "Turquoise/80": { "r": 0.6, "g": 0.84, "b": 0.84 },
+      "Turquoise/90": { "r": 0.55, "g": 0.82, "b": 0.82 },
+      "Turquoise/100": { "r": 0.5, "g": 0.8, "b": 0.8 },
+      "Gold/10": { "r": 0.98, "g": 0.97, "b": 0.9 },
+      "Gold/20": { "r": 0.96, "g": 0.94, "b": 0.8 },
+      "Gold/30": { "r": 0.94, "g": 0.91, "b": 0.7 },
+      "Gold/40": { "r": 0.92, "g": 0.88, "b": 0.6 },
+      "Gold/50": { "r": 0.9, "g": 0.85, "b": 0.5 },
+      "Gold/60": { "r": 0.88, "g": 0.82, "b": 0.4 },
+      "Gold/70": { "r": 0.86, "g": 0.79, "b": 0.3 },
+      "Gold/80": { "r": 0.84, "g": 0.76, "b": 0.2 },
+      "Gold/90": { "r": 0.82, "g": 0.73, "b": 0.1 },
+      "Gold/100": { "r": 0.8, "g": 0.7, "b": 0 },
+      "Lime/10": { "r": 0.95, "g": 0.98, "b": 0.9 },
+      "Lime/20": { "r": 0.9, "g": 0.96, "b": 0.8 },
+      "Lime/30": { "r": 0.85, "g": 0.94, "b": 0.7 },
+      "Lime/40": { "r": 0.8, "g": 0.92, "b": 0.6 },
+      "Lime/50": { "r": 0.75, "g": 0.9, "b": 0.5 },
+      "Lime/60": { "r": 0.7, "g": 0.88, "b": 0.4 },
+      "Lime/70": { "r": 0.65, "g": 0.86, "b": 0.3 },
+      "Lime/80": { "r": 0.6, "g": 0.84, "b": 0.2 },
+      "Lime/90": { "r": 0.55, "g": 0.82, "b": 0.1 },
+      "Lime/100": { "r": 0.5, "g": 0.8, "b": 0 },
+      "Orange/10": { "r": 0.98, "g": 0.95, "b": 0.9 },
+      "Orange/20": { "r": 0.96, "g": 0.9, "b": 0.8 },
+      "Orange/30": { "r": 0.94, "g": 0.85, "b": 0.7 },
+      "Orange/40": { "r": 0.92, "g": 0.8, "b": 0.6 },
+      "Orange/50": { "r": 0.9, "g": 0.75, "b": 0.5 },
+      "Orange/60": { "r": 0.88, "g": 0.7, "b": 0.4 },
+      "Orange/70": { "r": 0.86, "g": 0.65, "b": 0.3 },
+      "Orange/80": { "r": 0.84, "g": 0.6, "b": 0.2 },
+      "Orange/90": { "r": 0.82, "g": 0.55, "b": 0.1 },
+      "Orange/100": { "r": 0.8, "g": 0.5, "b": 0 }
+    },
+    "textStyles": {
+      "Caption/Caption": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Italic",
+        "fontSize": 16,
+        "letterSpacing": -0.25,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 1/[Auto] Bold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Bold",
+        "fontSize": 40,
+        "letterSpacing": -1,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 1/[Auto] Semibold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "SemiBold",
+        "fontSize": 40,
+        "letterSpacing": -1,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 1/[Auto] Regular": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Regular",
+        "fontSize": 40,
+        "letterSpacing": -1,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 1/[XL & L] Bold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Bold",
+        "fontSize": 48,
+        "letterSpacing": 0.12,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 1/[XL & L] Semibold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "SemiBold",
+        "fontSize": 48,
+        "letterSpacing": 0.12,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 1/[XL & L] Regular": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Regular",
+        "fontSize": 48,
+        "letterSpacing": 0.12,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 1/[M & S] Bold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Bold",
+        "fontSize": 40,
+        "letterSpacing": -1,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 1/[M & S] Semibold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "SemiBold",
+        "fontSize": 40,
+        "letterSpacing": -1,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 1/[M & S] Regular": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Regular",
+        "fontSize": 40,
+        "letterSpacing": -1,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 2/[Auto] Bold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Bold",
+        "fontSize": 32,
+        "letterSpacing": -0.75,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 2/[Auto] Semibold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "SemiBold",
+        "fontSize": 32,
+        "letterSpacing": -0.75,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 2/[Auto] Regular": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Regular",
+        "fontSize": 32,
+        "letterSpacing": -0.75,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 2/[XL & L] Bold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Bold",
+        "fontSize": 40,
+        "letterSpacing": -1,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 2/[XL & L] Semibold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "SemiBold",
+        "fontSize": 40,
+        "letterSpacing": -1,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 2/[XL & L] Regular": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Regular",
+        "fontSize": 40,
+        "letterSpacing": -1,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 2/[M & S] Bold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Bold",
+        "fontSize": 32,
+        "letterSpacing": -0.75,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 2/[M & S] Semibold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "SemiBold",
+        "fontSize": 32,
+        "letterSpacing": -0.75,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 2/[M & S] Regular": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Regular",
+        "fontSize": 32,
+        "letterSpacing": -0.75,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 3/[Auto] Bold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Bold",
+        "fontSize": 24,
+        "letterSpacing": -0.5,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 3/[Auto] Semibold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "SemiBold",
+        "fontSize": 24,
+        "letterSpacing": -0.5,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 3/[Auto] Regular": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Regular",
+        "fontSize": 24,
+        "letterSpacing": -0.5,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 3/[XL & L] Bold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Bold",
+        "fontSize": 32,
+        "letterSpacing": -0.75,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 3/[XL & L] Semibold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "SemiBold",
+        "fontSize": 32,
+        "letterSpacing": -0.75,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 3/[XL & L] Regular": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Regular",
+        "fontSize": 32,
+        "letterSpacing": -0.75,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 3/[M & S] Bold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Bold",
+        "fontSize": 24,
+        "letterSpacing": -0.5,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 3/[M & S] Semibold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "SemiBold",
+        "fontSize": 24,
+        "letterSpacing": -0.5,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 3/[M & S] Regular": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Regular",
+        "fontSize": 24,
+        "letterSpacing": -0.5,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 4/Bold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Bold",
+        "fontSize": 24,
+        "letterSpacing": -0.5,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 4/Semibold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "SemiBold",
+        "fontSize": 24,
+        "letterSpacing": -0.5,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 4/Regular": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Regular",
+        "fontSize": 24,
+        "letterSpacing": -0.5,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 5/Bold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Bold",
+        "fontSize": 16,
+        "letterSpacing": -0.25,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 5/Semibold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "SemiBold",
+        "fontSize": 16,
+        "letterSpacing": -0.25,
+        "textCase": "ORIGINAL"
+      },
+      "Headline 5/Regular": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Regular",
+        "fontSize": 16,
+        "letterSpacing": -0.25,
+        "textCase": "ORIGINAL"
+      },
+      "Overline/Overline": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Bold",
+        "fontSize": 16,
+        "letterSpacing": 2,
+        "textCase": "UPPER"
+      },
+      "Paragraph/Bold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Bold",
+        "fontSize": 16,
+        "letterSpacing": -0.25,
+        "textCase": "ORIGINAL"
+      },
+      "Paragraph/Semibold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "SemiBold",
+        "fontSize": 16,
+        "letterSpacing": -0.25,
+        "textCase": "ORIGINAL"
+      },
+      "Paragraph/Regular": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Regular",
+        "fontSize": 16,
+        "letterSpacing": -0.25,
+        "textCase": "ORIGINAL"
+      },
+      "Hyperlink/Hyperlink": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Bold",
+        "fontSize": 16,
+        "letterSpacing": -0.25,
+        "textCase": "ORIGINAL"
+      },
+      "Small text/Bold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Bold",
+        "fontSize": 14,
+        "letterSpacing": -0.25,
+        "textCase": "ORIGINAL"
+      },
+      "Small text/Semibold": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "SemiBold",
+        "fontSize": 14,
+        "letterSpacing": -0.25,
+        "textCase": "ORIGINAL"
+      },
+      "Small text/Regular": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Regular",
+        "fontSize": 14,
+        "letterSpacing": -0.25,
+        "textCase": "ORIGINAL"
+      },
+      "Small text/Italics": {
+        "fontFamily": "Montserrat",
+        "fontWeight": "Italic",
+        "fontSize": 14,
+        "letterSpacing": -0.25,
+        "textCase": "ORIGINAL"
+      }
+    },
+    "styles": {
+      "colors": [
+        {
+          "name": "Functional/White",
+          "token": "functional-white",
+          "type": "solid"
+        },
+        {
+          "name": "Functional/Smoke grey",
+          "token": "functional-smoke-grey",
+          "type": "solid"
+        },
+        {
+          "name": "Functional/Metal grey",
+          "token": "functional-metal-grey",
+          "type": "solid"
+        },
+        {
+          "name": "Functional/Stone grey",
+          "token": "functional-stone-grey",
+          "type": "solid"
+        },
+        {
+          "name": "Functional/Steel grey",
+          "token": "functional-steel-grey",
+          "type": "solid"
+        },
+        {
+          "name": "Functional/Slate grey",
+          "token": "functional-slate-grey",
+          "type": "solid"
+        },
+        {
+          "name": "Functional/Carbon",
+          "token": "functional-carbon",
+          "type": "solid"
+        },
+        {
+          "name": "Status/Lava red 100",
+          "token": "status-lava-red-100",
+          "type": "solid"
+        },
+        {
+          "name": "Status/Lava red 5",
+          "token": "status-lava-red-5",
+          "type": "solid"
+        },
+        {
+          "name": "Status/Ocean blue 100",
+          "token": "status-ocean-blue-100",
+          "type": "solid"
+        },
+        {
+          "name": "Status/Ocean blue 10",
+          "token": "status-ocean-blue-10",
+          "type": "solid"
+        },
+        {
+          "name": "Status/Tropical green 100",
+          "token": "status-tropical-green-100",
+          "type": "solid"
+        },
+        {
+          "name": "Status/Tropical green 5",
+          "token": "status-tropical-green-5",
+          "type": "solid"
+        },
+        {
+          "name": "Status/Ginger",
+          "token": "status-ginger",
+          "type": "solid"
+        },
+        {
+          "name": "Primary/20",
+          "token": "primary-20",
+          "type": "solid"
+        },
+        {
+          "name": "Primary/40",
+          "token": "primary-40",
+          "type": "solid"
+        },
+        {
+          "name": "Primary/60",
+          "token": "primary-60",
+          "type": "solid"
+        },
+        {
+          "name": "Primary/80",
+          "token": "primary-80",
+          "type": "solid"
+        },
+        {
+          "name": "Primary/100",
+          "token": "primary-100",
+          "type": "solid"
+        },
+        {
+          "name": "Pine green/10",
+          "token": "pine-green-10",
+          "type": "solid"
+        },
+        {
+          "name": "Pine green/20",
+          "token": "pine-green-20",
+          "type": "solid"
+        },
+        {
+          "name": "Pine green/30",
+          "token": "pine-green-30",
+          "type": "solid"
+        },
+        {
+          "name": "Pine green/40",
+          "token": "pine-green-40",
+          "type": "solid"
+        },
+        {
+          "name": "Pine green/50",
+          "token": "pine-green-50",
+          "type": "solid"
+        },
+        {
+          "name": "Pine green/60",
+          "token": "pine-green-60",
+          "type": "solid"
+        },
+        {
+          "name": "Pine green/70",
+          "token": "pine-green-70",
+          "type": "solid"
+        },
+        {
+          "name": "Pine green/80",
+          "token": "pine-green-80",
+          "type": "solid"
+        },
+        {
+          "name": "Pine green/90",
+          "token": "pine-green-90",
+          "type": "solid"
+        },
+        {
+          "name": "Pine green/100",
+          "token": "pine-green-100",
+          "type": "solid"
+        },
+        {
+          "name": "Turquoise/10",
+          "token": "turquoise-10",
+          "type": "solid"
+        },
+        {
+          "name": "Turquoise/20",
+          "token": "turquoise-20",
+          "type": "solid"
+        },
+        {
+          "name": "Turquoise/30",
+          "token": "turquoise-30",
+          "type": "solid"
+        },
+        {
+          "name": "Turquoise/40",
+          "token": "turquoise-40",
+          "type": "solid"
+        },
+        {
+          "name": "Turquoise/50",
+          "token": "turquoise-50",
+          "type": "solid"
+        },
+        {
+          "name": "Turquoise/60",
+          "token": "turquoise-60",
+          "type": "solid"
+        },
+        {
+          "name": "Turquoise/70",
+          "token": "turquoise-70",
+          "type": "solid"
+        },
+        {
+          "name": "Turquoise/80",
+          "token": "turquoise-80",
+          "type": "solid"
+        },
+        {
+          "name": "Turquoise/90",
+          "token": "turquoise-90",
+          "type": "solid"
+        },
+        {
+          "name": "Turquoise/100",
+          "token": "turquoise-100",
+          "type": "solid"
+        },
+        {
+          "name": "Gold/10",
+          "token": "gold-10",
+          "type": "solid"
+        },
+        {
+          "name": "Gold/20",
+          "token": "gold-20",
+          "type": "solid"
+        },
+        {
+          "name": "Gold/30",
+          "token": "gold-30",
+          "type": "solid"
+        },
+        {
+          "name": "Gold/40",
+          "token": "gold-40",
+          "type": "solid"
+        },
+        {
+          "name": "Gold/50",
+          "token": "gold-50",
+          "type": "solid"
+        },
+        {
+          "name": "Gold/60",
+          "token": "gold-60",
+          "type": "solid"
+        },
+        {
+          "name": "Gold/70",
+          "token": "gold-70",
+          "type": "solid"
+        },
+        {
+          "name": "Gold/80",
+          "token": "gold-80",
+          "type": "solid"
+        },
+        {
+          "name": "Gold/90",
+          "token": "gold-90",
+          "type": "solid"
+        },
+        {
+          "name": "Gold/100",
+          "token": "gold-100",
+          "type": "solid"
+        },
+        {
+          "name": "Lime/10",
+          "token": "lime-10",
+          "type": "solid"
+        },
+        {
+          "name": "Lime/20",
+          "token": "lime-20",
+          "type": "solid"
+        },
+        {
+          "name": "Lime/30",
+          "token": "lime-30",
+          "type": "solid"
+        },
+        {
+          "name": "Lime/40",
+          "token": "lime-40",
+          "type": "solid"
+        },
+        {
+          "name": "Lime/50",
+          "token": "lime-50",
+          "type": "solid"
+        },
+        {
+          "name": "Lime/60",
+          "token": "lime-60",
+          "type": "solid"
+        },
+        {
+          "name": "Lime/70",
+          "token": "lime-70",
+          "type": "solid"
+        },
+        {
+          "name": "Lime/80",
+          "token": "lime-80",
+          "type": "solid"
+        },
+        {
+          "name": "Lime/90",
+          "token": "lime-90",
+          "type": "solid"
+        },
+        {
+          "name": "Lime/100",
+          "token": "lime-100",
+          "type": "solid"
+        },
+        {
+          "name": "Orange/10",
+          "token": "orange-10",
+          "type": "solid"
+        },
+        {
+          "name": "Orange/20",
+          "token": "orange-20",
+          "type": "solid"
+        },
+        {
+          "name": "Orange/30",
+          "token": "orange-30",
+          "type": "solid"
+        },
+        {
+          "name": "Orange/40",
+          "token": "orange-40",
+          "type": "solid"
+        },
+        {
+          "name": "Orange/50",
+          "token": "orange-50",
+          "type": "solid"
+        },
+        {
+          "name": "Orange/60",
+          "token": "orange-60",
+          "type": "solid"
+        },
+        {
+          "name": "Orange/70",
+          "token": "orange-70",
+          "type": "solid"
+        },
+        {
+          "name": "Orange/80",
+          "token": "orange-80",
+          "type": "solid"
+        },
+        {
+          "name": "Orange/90",
+          "token": "orange-90",
+          "type": "solid"
+        },
+        {
+          "name": "Orange/100",
+          "token": "orange-100",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Solid/CC 1",
+          "description": "Pine green 80",
+          "token": "chart-solid-cc-1",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Solid/CC 2",
+          "description": "Orange 80",
+          "token": "chart-solid-cc-2",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Solid/CC 3",
+          "description": "Healthcare 200",
+          "token": "chart-solid-cc-3",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Solid/CC 4",
+          "description": "Retirement 100",
+          "token": "chart-solid-cc-4",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Solid/CC 5",
+          "description": "Turquoise 90",
+          "token": "chart-solid-cc-5",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Solid/CC 6",
+          "description": "Home ownership 80",
+          "token": "chart-solid-cc-6",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Solid/CC 7",
+          "description": "Investment 175",
+          "token": "chart-solid-cc-7",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Solid/CC 8",
+          "description": "Education 175",
+          "token": "chart-solid-cc-8",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Solid/CC 9",
+          "description": "Self-employed 200",
+          "token": "chart-solid-cc-9",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Solid/CC 10",
+          "description": "Account Services 40",
+          "token": "chart-solid-cc-10",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Solid/CC 11",
+          "description": "Lime 100",
+          "token": "chart-solid-cc-11",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Base/CC 1",
+          "description": "Pine 20",
+          "token": "chart-striped-base-cc-1",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Base/CC 2",
+          "description": "Orange 20",
+          "token": "chart-striped-base-cc-2",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Base/CC 3",
+          "description": "Healthcare 20",
+          "token": "chart-striped-base-cc-3",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Base/CC 4",
+          "description": "Retirement 20",
+          "token": "chart-striped-base-cc-4",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Base/CC 5",
+          "description": "Turquoise 20",
+          "token": "chart-striped-base-cc-5",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Base/CC 6",
+          "description": "Home ownership 20",
+          "token": "chart-striped-base-cc-6",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Base/CC 7",
+          "description": "Investment 20",
+          "token": "chart-striped-base-cc-7",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Base/CC 8",
+          "description": "Education 20",
+          "token": "chart-striped-base-cc-8",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Base/CC 9",
+          "description": "Self-employed 20",
+          "token": "chart-striped-base-cc-9",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Base/CC 10",
+          "description": "Account Services 40",
+          "token": "chart-striped-base-cc-10",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Base/CC 11",
+          "description": "Lime 20",
+          "token": "chart-striped-base-cc-11",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Stripe/CC 1",
+          "description": "Pine green 80",
+          "token": "chart-striped-stripe-cc-1",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Stripe/CC 2",
+          "description": "Orange 80",
+          "token": "chart-striped-stripe-cc-2",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Stripe/CC 3",
+          "description": "Healthcare 200",
+          "token": "chart-striped-stripe-cc-3",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Stripe/CC 4",
+          "description": "Retirement 100",
+          "token": "chart-striped-stripe-cc-4",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Stripe/CC 5",
+          "description": "Turquoise 90",
+          "token": "chart-striped-stripe-cc-5",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Stripe/CC 6",
+          "description": "Home ownership 80",
+          "token": "chart-striped-stripe-cc-6",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Stripe/CC 7",
+          "description": "Investment 175",
+          "token": "chart-striped-stripe-cc-7",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Stripe/CC 8",
+          "description": "Education 175",
+          "token": "chart-striped-stripe-cc-8",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Stripe/CC 9",
+          "description": "Self-employed 200",
+          "token": "chart-striped-stripe-cc-9",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Stripe/CC 10",
+          "description": "Account Services 200",
+          "token": "chart-striped-stripe-cc-10",
+          "type": "solid"
+        },
+        {
+          "name": "Chart/Striped/Stripe/CC 11",
+          "description": "Lime 100",
+          "token": "chart-striped-stripe-cc-11",
+          "type": "solid"
+        },
+        {
+          "name": "Retirement/10",
+          "token": "retirement-10",
+          "type": "solid"
+        },
+        {
+          "name": "Retirement/20",
+          "token": "retirement-20",
+          "type": "solid"
+        },
+        {
+          "name": "Retirement/30",
+          "token": "retirement-30",
+          "type": "solid"
+        },
+        {
+          "name": "Retirement/40",
+          "token": "retirement-40",
+          "type": "solid"
+        },
+        {
+          "name": "Retirement/50",
+          "token": "retirement-50",
+          "type": "solid"
+        },
+        {
+          "name": "Retirement/60",
+          "token": "retirement-60",
+          "type": "solid"
+        },
+        {
+          "name": "Retirement/70",
+          "token": "retirement-70",
+          "type": "solid"
+        },
+        {
+          "name": "Retirement/80",
+          "token": "retirement-80",
+          "type": "solid"
+        },
+        {
+          "name": "Retirement/90",
+          "token": "retirement-90",
+          "type": "solid"
+        },
+        {
+          "name": "Retirement/100",
+          "token": "retirement-100",
+          "type": "solid"
+        },
+        {
+          "name": "Retirement/125",
+          "token": "retirement-125",
+          "type": "solid"
+        },
+        {
+          "name": "Retirement/150",
+          "token": "retirement-150",
+          "type": "solid"
+        },
+        {
+          "name": "Retirement/175",
+          "token": "retirement-175",
+          "type": "solid"
+        },
+        {
+          "name": "Retirement/200",
+          "token": "retirement-200",
+          "type": "solid"
+        },
+        {
+          "name": "Home ownership/10",
+          "token": "home-ownership-10",
+          "type": "solid"
+        },
+        {
+          "name": "Home ownership/20",
+          "token": "home-ownership-20",
+          "type": "solid"
+        },
+        {
+          "name": "Home ownership/30",
+          "token": "home-ownership-30",
+          "type": "solid"
+        },
+        {
+          "name": "Home ownership/40",
+          "token": "home-ownership-40",
+          "type": "solid"
+        },
+        {
+          "name": "Home ownership/50",
+          "token": "home-ownership-50",
+          "type": "solid"
+        },
+        {
+          "name": "Home ownership/60",
+          "token": "home-ownership-60",
+          "type": "solid"
+        },
+        {
+          "name": "Home ownership/70",
+          "token": "home-ownership-70",
+          "type": "solid"
+        },
+        {
+          "name": "Home ownership/80",
+          "token": "home-ownership-80",
+          "type": "solid"
+        },
+        {
+          "name": "Home ownership/90",
+          "token": "home-ownership-90",
+          "type": "solid"
+        },
+        {
+          "name": "Home ownership/100",
+          "token": "home-ownership-100",
+          "type": "solid"
+        },
+        {
+          "name": "Home ownership/125",
+          "token": "home-ownership-125",
+          "type": "solid"
+        },
+        {
+          "name": "Home ownership/150",
+          "token": "home-ownership-150",
+          "type": "solid"
+        },
+        {
+          "name": "Home ownership/175",
+          "token": "home-ownership-175",
+          "type": "solid"
+        },
+        {
+          "name": "Home ownership/200",
+          "token": "home-ownership-200",
+          "type": "solid"
+        },
+        {
+          "name": "Healthcare/10",
+          "token": "healthcare-10",
+          "type": "solid"
+        },
+        {
+          "name": "Healthcare/20",
+          "token": "healthcare-20",
+          "type": "solid"
+        },
+        {
+          "name": "Healthcare/30",
+          "token": "healthcare-30",
+          "type": "solid"
+        },
+        {
+          "name": "Healthcare/40",
+          "token": "healthcare-40",
+          "type": "solid"
+        },
+        {
+          "name": "Healthcare/50",
+          "token": "healthcare-50",
+          "type": "solid"
+        },
+        {
+          "name": "Healthcare/60",
+          "token": "healthcare-60",
+          "type": "solid"
+        },
+        {
+          "name": "Healthcare/70",
+          "token": "healthcare-70",
+          "type": "solid"
+        },
+        {
+          "name": "Healthcare/80",
+          "token": "healthcare-80",
+          "type": "solid"
+        },
+        {
+          "name": "Healthcare/90",
+          "token": "healthcare-90",
+          "type": "solid"
+        },
+        {
+          "name": "Healthcare/100",
+          "token": "healthcare-100",
+          "type": "solid"
+        },
+        {
+          "name": "Healthcare/125",
+          "token": "healthcare-125",
+          "type": "solid"
+        },
+        {
+          "name": "Healthcare/150",
+          "token": "healthcare-150",
+          "type": "solid"
+        },
+        {
+          "name": "Healthcare/175",
+          "token": "healthcare-175",
+          "type": "solid"
+        },
+        {
+          "name": "Healthcare/200",
+          "token": "healthcare-200",
+          "type": "solid"
+        },
+        {
+          "name": "Education/10",
+          "token": "education-10",
+          "type": "solid"
+        },
+        {
+          "name": "Education/20",
+          "token": "education-20",
+          "type": "solid"
+        },
+        {
+          "name": "Education/30",
+          "token": "education-30",
+          "type": "solid"
+        },
+        {
+          "name": "Education/40",
+          "token": "education-40",
+          "type": "solid"
+        },
+        {
+          "name": "Education/50",
+          "token": "education-50",
+          "type": "solid"
+        },
+        {
+          "name": "Education/60",
+          "token": "education-60",
+          "type": "solid"
+        },
+        {
+          "name": "Education/70",
+          "token": "education-70",
+          "type": "solid"
+        },
+        {
+          "name": "Education/80",
+          "token": "education-80",
+          "type": "solid"
+        },
+        {
+          "name": "Education/90",
+          "token": "education-90",
+          "type": "solid"
+        },
+        {
+          "name": "Education/100",
+          "token": "education-100",
+          "type": "solid"
+        },
+        {
+          "name": "Education/125",
+          "token": "education-125",
+          "type": "solid"
+        },
+        {
+          "name": "Education/150",
+          "token": "education-150",
+          "type": "solid"
+        },
+        {
+          "name": "Education/175",
+          "token": "education-175",
+          "type": "solid"
+        },
+        {
+          "name": "Education/200",
+          "token": "education-200",
+          "type": "solid"
+        },
+        {
+          "name": "Investment/10",
+          "token": "investment-10",
+          "type": "solid"
+        },
+        {
+          "name": "Investment/20",
+          "token": "investment-20",
+          "type": "solid"
+        },
+        {
+          "name": "Investment/30",
+          "token": "investment-30",
+          "type": "solid"
+        },
+        {
+          "name": "Investment/40",
+          "token": "investment-40",
+          "type": "solid"
+        },
+        {
+          "name": "Investment/50",
+          "token": "investment-50",
+          "type": "solid"
+        },
+        {
+          "name": "Investment/60",
+          "token": "investment-60",
+          "type": "solid"
+        },
+        {
+          "name": "Investment/70",
+          "token": "investment-70",
+          "type": "solid"
+        },
+        {
+          "name": "Investment/80",
+          "token": "investment-80",
+          "type": "solid"
+        },
+        {
+          "name": "Investment/90",
+          "token": "investment-90",
+          "type": "solid"
+        },
+        {
+          "name": "Investment/100",
+          "token": "investment-100",
+          "type": "solid"
+        },
+        {
+          "name": "Investment/125",
+          "token": "investment-125",
+          "type": "solid"
+        },
+        {
+          "name": "Investment/150",
+          "token": "investment-150",
+          "type": "solid"
+        },
+        {
+          "name": "Investment/175",
+          "token": "investment-175",
+          "type": "solid"
+        },
+        {
+          "name": "Investment/200",
+          "token": "investment-200",
+          "type": "solid"
+        },
+        {
+          "name": "Self-employed/10",
+          "token": "self-employed-10",
+          "type": "solid"
+        },
+        {
+          "name": "Self-employed/20",
+          "token": "self-employed-20",
+          "type": "solid"
+        },
+        {
+          "name": "Self-employed/30",
+          "token": "self-employed-30",
+          "type": "solid"
+        },
+        {
+          "name": "Self-employed/40",
+          "token": "self-employed-40",
+          "type": "solid"
+        },
+        {
+          "name": "Self-employed/50",
+          "token": "self-employed-50",
+          "type": "solid"
+        },
+        {
+          "name": "Self-employed/60",
+          "token": "self-employed-60",
+          "type": "solid"
+        },
+        {
+          "name": "Self-employed/70",
+          "token": "self-employed-70",
+          "type": "solid"
+        },
+        {
+          "name": "Self-employed/80",
+          "token": "self-employed-80",
+          "type": "solid"
+        },
+        {
+          "name": "Self-employed/90",
+          "token": "self-employed-90",
+          "type": "solid"
+        },
+        {
+          "name": "Self-employed/100",
+          "token": "self-employed-100",
+          "type": "solid"
+        },
+        {
+          "name": "Self-employed/125",
+          "token": "self-employed-125",
+          "type": "solid"
+        },
+        {
+          "name": "Self-employed/150",
+          "token": "self-employed-150",
+          "type": "solid"
+        },
+        {
+          "name": "Self-employed/175",
+          "token": "self-employed-175",
+          "type": "solid"
+        },
+        {
+          "name": "Self-employed/200",
+          "token": "self-employed-200",
+          "type": "solid"
+        },
+        {
+          "name": "Account services & PFYLO/10",
+          "token": "account-services-pfylo-10",
+          "type": "solid"
+        },
+        {
+          "name": "Account services & PFYLO/20",
+          "token": "account-services-pfylo-20",
+          "type": "solid"
+        },
+        {
+          "name": "Account services & PFYLO/30",
+          "token": "account-services-pfylo-30",
+          "type": "solid"
+        },
+        {
+          "name": "Account services & PFYLO/40",
+          "token": "account-services-pfylo-40",
+          "type": "solid"
+        },
+        {
+          "name": "Account services & PFYLO/50",
+          "token": "account-services-pfylo-50",
+          "type": "solid"
+        },
+        {
+          "name": "Account services & PFYLO/60",
+          "token": "account-services-pfylo-60",
+          "type": "solid"
+        },
+        {
+          "name": "Account services & PFYLO/70",
+          "token": "account-services-pfylo-70",
+          "type": "solid"
+        },
+        {
+          "name": "Account services & PFYLO/80",
+          "token": "account-services-pfylo-80",
+          "type": "solid"
+        },
+        {
+          "name": "Account services & PFYLO/90",
+          "token": "account-services-pfylo-90",
+          "type": "solid"
+        },
+        {
+          "name": "Account services & PFYLO/100",
+          "token": "account-services-pfylo-100",
+          "type": "solid"
+        },
+        {
+          "name": "Account services & PFYLO/125",
+          "token": "account-services-pfylo-125",
+          "type": "solid"
+        },
+        {
+          "name": "Account services & PFYLO/150",
+          "token": "account-services-pfylo-150",
+          "type": "solid"
+        },
+        {
+          "name": "Account services & PFYLO/175",
+          "token": "account-services-pfylo-175",
+          "type": "solid"
+        },
+        {
+          "name": "Account services & PFYLO/200",
+          "token": "account-services-pfylo-200",
+          "type": "solid"
+        },
+        {
+          "name": "Growing savings/10",
+          "token": "growing-savings-10",
+          "type": "solid"
+        },
+        {
+          "name": "Growing savings/20",
+          "token": "growing-savings-20",
+          "type": "solid"
+        },
+        {
+          "name": "Growing savings/30",
+          "token": "growing-savings-30",
+          "type": "solid"
+        },
+        {
+          "name": "Growing savings/40",
+          "token": "growing-savings-40",
+          "type": "solid"
+        },
+        {
+          "name": "Growing savings/50",
+          "token": "growing-savings-50",
+          "type": "solid"
+        },
+        {
+          "name": "Growing savings/60",
+          "token": "growing-savings-60",
+          "type": "solid"
+        },
+        {
+          "name": "Growing savings/70",
+          "token": "growing-savings-70",
+          "type": "solid"
+        },
+        {
+          "name": "Growing savings/80",
+          "token": "growing-savings-80",
+          "type": "solid"
+        },
+        {
+          "name": "Growing savings/90",
+          "token": "growing-savings-90",
+          "type": "solid"
+        },
+        {
+          "name": "Growing savings/100",
+          "token": "growing-savings-100",
+          "type": "solid"
+        },
+        {
+          "name": "Growing savings/125",
+          "token": "growing-savings-125",
+          "type": "solid"
+        },
+        {
+          "name": "Growing savings/150",
+          "token": "growing-savings-150",
+          "type": "solid"
+        },
+        {
+          "name": "Growing savings/175",
+          "token": "growing-savings-175",
+          "type": "solid"
+        },
+        {
+          "name": "Growing savings/200",
+          "token": "growing-savings-200",
+          "type": "solid"
+        }
+      ],
+      "textStyles": [
+        {
+          "name": "Caption/Caption",
+          "token": "caption-caption",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "400",
+          "fontStyle": "italic",
+          "fontSize": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "-0.25px"
+        },
+        {
+          "name": "Headline 1/[Auto] Bold",
+          "token": "headline-1-auto-bold",
+          "type": "text",
+          "description": "Used when components does not have layout difference across all breakpoints.",
+          "fontFamily": "Montserrat",
+          "fontWeight": "700",
+          "fontSize": "40px",
+          "lineHeight": "56px",
+          "letterSpacing": "-1px"
+        },
+        {
+          "name": "Headline 1/[Auto] Semibold",
+          "token": "headline-1-auto-semibold",
+          "type": "text",
+          "description": "Used when components does not have layout difference across all breakpoints.",
+          "fontFamily": "Montserrat",
+          "fontWeight": "600",
+          "fontSize": "40px",
+          "lineHeight": "56px",
+          "letterSpacing": "-1px"
+        },
+        {
+          "name": "Headline 1/[Auto] Regular",
+          "token": "headline-1-auto-regular",
+          "type": "text",
+          "description": "Used when components does not have layout difference across all breakpoints.",
+          "fontFamily": "Montserrat",
+          "fontWeight": "400",
+          "fontSize": "40px",
+          "lineHeight": "56px",
+          "letterSpacing": "-1px"
+        },
+        {
+          "name": "Headline 1/[XL & L] Bold",
+          "token": "headline-1-xl-l-bold",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "700",
+          "fontSize": "48px",
+          "lineHeight": "72px",
+          "letterSpacing": "0.11999999731779099px"
+        },
+        {
+          "name": "Headline 1/[XL & L] Semibold",
+          "token": "headline-1-xl-l-semibold",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "600",
+          "fontSize": "48px",
+          "lineHeight": "72px",
+          "letterSpacing": "0.11999999731779099px"
+        },
+        {
+          "name": "Headline 1/[XL & L] Regular",
+          "token": "headline-1-xl-l-regular",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "400",
+          "fontSize": "48px",
+          "lineHeight": "72px",
+          "letterSpacing": "0.11999999731779099px"
+        },
+        {
+          "name": "Headline 1/[M & S] Bold",
+          "token": "headline-1-m-s-bold",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "700",
+          "fontSize": "40px",
+          "lineHeight": "56px",
+          "letterSpacing": "-1px"
+        },
+        {
+          "name": "Headline 1/[M & S] Semibold",
+          "token": "headline-1-m-s-semibold",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "600",
+          "fontSize": "40px",
+          "lineHeight": "56px",
+          "letterSpacing": "-1px"
+        },
+        {
+          "name": "Headline 1/[M & S] Regular",
+          "token": "headline-1-m-s-regular",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "400",
+          "fontSize": "40px",
+          "lineHeight": "56px",
+          "letterSpacing": "-1px"
+        },
+        {
+          "name": "Headline 2/[Auto] Bold",
+          "token": "headline-2-auto-bold",
+          "type": "text",
+          "description": "Used when components does not have layout difference across all breakpoints.",
+          "fontFamily": "Montserrat",
+          "fontWeight": "700",
+          "fontSize": "32px",
+          "lineHeight": "48px",
+          "letterSpacing": "-0.75px"
+        },
+        {
+          "name": "Headline 2/[Auto] Semibold",
+          "token": "headline-2-auto-semibold",
+          "type": "text",
+          "description": "Used when components does not have layout difference across all breakpoints.",
+          "fontFamily": "Montserrat",
+          "fontWeight": "600",
+          "fontSize": "32px",
+          "lineHeight": "48px",
+          "letterSpacing": "-0.75px"
+        },
+        {
+          "name": "Headline 2/[Auto] Regular",
+          "token": "headline-2-auto-regular",
+          "type": "text",
+          "description": "Used when components does not have layout difference across all breakpoints.",
+          "fontFamily": "Montserrat",
+          "fontWeight": "400",
+          "fontSize": "32px",
+          "lineHeight": "48px",
+          "letterSpacing": "-0.75px"
+        },
+        {
+          "name": "Headline 2/[XL & L] Bold",
+          "token": "headline-2-xl-l-bold",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "700",
+          "fontSize": "40px",
+          "lineHeight": "56px",
+          "letterSpacing": "-1px"
+        },
+        {
+          "name": "Headline 2/[XL & L] Semibold",
+          "token": "headline-2-xl-l-semibold",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "600",
+          "fontSize": "40px",
+          "lineHeight": "56px",
+          "letterSpacing": "-1px"
+        },
+        {
+          "name": "Headline 2/[XL & L] Regular",
+          "token": "headline-2-xl-l-regular",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "400",
+          "fontSize": "40px",
+          "lineHeight": "56px",
+          "letterSpacing": "-1px"
+        },
+        {
+          "name": "Headline 2/[M & S] Bold",
+          "token": "headline-2-m-s-bold",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "700",
+          "fontSize": "32px",
+          "lineHeight": "48px",
+          "letterSpacing": "-0.75px"
+        },
+        {
+          "name": "Headline 2/[M & S] Semibold",
+          "token": "headline-2-m-s-semibold",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "600",
+          "fontSize": "32px",
+          "lineHeight": "48px",
+          "letterSpacing": "-0.75px"
+        },
+        {
+          "name": "Headline 2/[M & S] Regular",
+          "token": "headline-2-m-s-regular",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "400",
+          "fontSize": "32px",
+          "lineHeight": "48px",
+          "letterSpacing": "-0.75px"
+        },
+        {
+          "name": "Headline 3/[Auto] Bold",
+          "token": "headline-3-auto-bold",
+          "type": "text",
+          "description": "Used when components does not have layout difference across all breakpoints.",
+          "fontFamily": "Montserrat",
+          "fontWeight": "700",
+          "fontSize": "24px",
+          "lineHeight": "32px",
+          "letterSpacing": "-0.5px"
+        },
+        {
+          "name": "Headline 3/[Auto] Semibold",
+          "token": "headline-3-auto-semibold",
+          "type": "text",
+          "description": "Used when components does not have layout difference across all breakpoints.",
+          "fontFamily": "Montserrat",
+          "fontWeight": "600",
+          "fontSize": "24px",
+          "lineHeight": "32px",
+          "letterSpacing": "-0.5px"
+        },
+        {
+          "name": "Headline 3/[Auto] Regular",
+          "token": "headline-3-auto-regular",
+          "type": "text",
+          "description": "Used when components does not have layout difference across all breakpoints.",
+          "fontFamily": "Montserrat",
+          "fontWeight": "400",
+          "fontSize": "24px",
+          "lineHeight": "32px",
+          "letterSpacing": "-0.5px"
+        },
+        {
+          "name": "Headline 3/[XL & L] Bold",
+          "token": "headline-3-xl-l-bold",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "700",
+          "fontSize": "32px",
+          "lineHeight": "48px",
+          "letterSpacing": "-0.75px"
+        },
+        {
+          "name": "Headline 3/[XL & L] Semibold",
+          "token": "headline-3-xl-l-semibold",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "600",
+          "fontSize": "32px",
+          "lineHeight": "48px",
+          "letterSpacing": "-0.75px"
+        },
+        {
+          "name": "Headline 3/[XL & L] Regular",
+          "token": "headline-3-xl-l-regular",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "400",
+          "fontSize": "32px",
+          "lineHeight": "48px",
+          "letterSpacing": "-0.75px"
+        },
+        {
+          "name": "Headline 3/[M & S] Bold",
+          "token": "headline-3-m-s-bold",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "700",
+          "fontSize": "24px",
+          "lineHeight": "32px",
+          "letterSpacing": "-0.5px"
+        },
+        {
+          "name": "Headline 3/[M & S] Semibold",
+          "token": "headline-3-m-s-semibold",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "600",
+          "fontSize": "24px",
+          "lineHeight": "32px",
+          "letterSpacing": "-0.5px"
+        },
+        {
+          "name": "Headline 3/[M & S] Regular",
+          "token": "headline-3-m-s-regular",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "400",
+          "fontSize": "24px",
+          "lineHeight": "32px",
+          "letterSpacing": "-0.5px"
+        },
+        {
+          "name": "Headline 4/Bold",
+          "token": "headline-4-bold",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "700",
+          "fontSize": "24px",
+          "lineHeight": "32px",
+          "letterSpacing": "-0.5px"
+        },
+        {
+          "name": "Headline 4/Semibold",
+          "token": "headline-4-semibold",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "600",
+          "fontSize": "24px",
+          "lineHeight": "32px",
+          "letterSpacing": "-0.5px"
+        },
+        {
+          "name": "Headline 4/Regular",
+          "token": "headline-4-regular",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "400",
+          "fontSize": "24px",
+          "lineHeight": "32px",
+          "letterSpacing": "-0.5px"
+        },
+        {
+          "name": "Headline 5/Bold",
+          "token": "headline-5-bold",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "700",
+          "fontSize": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "-0.25px"
+        },
+        {
+          "name": "Headline 5/Semibold",
+          "token": "headline-5-semibold",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "600",
+          "fontSize": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "-0.25px"
+        },
+        {
+          "name": "Headline 5/Regular",
+          "token": "headline-5-regular",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "400",
+          "fontSize": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "-0.25px"
+        },
+        {
+          "name": "Overline/Overline",
+          "token": "overline-overline",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "700",
+          "fontSize": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "2px",
+          "textTransform": "upper"
+        },
+        {
+          "name": "Paragraph/Bold",
+          "token": "paragraph-bold",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "700",
+          "fontSize": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "-0.25px"
+        },
+        {
+          "name": "Paragraph/Semibold",
+          "token": "paragraph-semibold",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "600",
+          "fontSize": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "-0.25px"
+        },
+        {
+          "name": "Paragraph/Regular",
+          "token": "paragraph-regular",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "400",
+          "fontSize": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "-0.25px"
+        },
+        {
+          "name": "Hyperlink/Hyperlink",
+          "token": "hyperlink-hyperlink",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "700",
+          "fontSize": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "-0.25px",
+          "textDecoration": "underline"
+        },
+        {
+          "name": "Small text/Bold",
+          "token": "small-text-bold",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "700",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "letterSpacing": "-0.25px"
+        },
+        {
+          "name": "Small text/Semibold",
+          "token": "small-text-semibold",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "600",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "letterSpacing": "-0.25px"
+        },
+        {
+          "name": "Small text/Regular",
+          "token": "small-text-regular",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "400",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "letterSpacing": "-0.25px"
+        },
+        {
+          "name": "Small text/Italics",
+          "token": "small-text-italics",
+          "type": "text",
+          "fontFamily": "Montserrat",
+          "fontWeight": "400",
+          "fontStyle": "italic",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "letterSpacing": "-0.25px"
+        }
+      ],
+      "effectStyles": [
+        {
+          "name": "Elevation 1",
+          "token": "elevation-1",
+          "type": "effect",
+          "value": "box-shadow: 0px 4px 8px 0px rgba(155, 155, 155, 0.16)",
+          "effects": [
+            {
+              "type": "drop-shadow",
+              "x": 0,
+              "y": 4,
+              "blur": 8,
+              "spread": 0,
+              "color": "rgba(155, 155, 155, 0.16)"
+            }
+          ]
+        },
+        {
+          "name": "Elevation 2",
+          "token": "elevation-2",
+          "type": "effect",
+          "value": "box-shadow: 0px 0px 36px 0px rgba(155, 155, 155, 0.29)",
+          "effects": [
+            {
+              "type": "drop-shadow",
+              "x": 0,
+              "y": 0,
+              "blur": 36,
+              "spread": 0,
+              "color": "rgba(155, 155, 155, 0.29)"
+            }
+          ]
+        },
+        {
+          "name": "Elevation 3",
+          "token": "elevation-3",
+          "type": "effect",
+          "value": "box-shadow: 0px 16px 16px 0px rgba(25, 25, 25, 0.2)",
+          "effects": [
+            {
+              "type": "drop-shadow",
+              "x": 0,
+              "y": 16,
+              "blur": 16,
+              "spread": 0,
+              "color": "rgba(25, 25, 25, 0.2)"
+            }
+          ]
+        }
+      ],
+      "gridStyles": [
+        {
+          "name": "S (red) - 767px and below",
+          "token": "s-red-767px-and-below",
+          "type": "grid",
+          "description": "Use this when the design is for Breakpoint S.",
+          "grids": [
+            {
+              "pattern": "columns",
+              "count": 6,
+              "gutter": 16,
+              "margin": 16
+            }
+          ]
+        },
+        {
+          "name": "S (blue)",
+          "token": "s-blue",
+          "type": "grid",
+          "description": "Use this when the design is for Breakpoint S. Can be used when there is nested grid.",
+          "grids": [
+            {
+              "pattern": "columns",
+              "count": 6,
+              "gutter": 16,
+              "margin": 16
+            }
+          ]
+        },
+        {
+          "name": "M (red) - 768px to 991px",
+          "token": "m-red-768px-to-991px",
+          "type": "grid",
+          "description": "Use this when the design is for Breakpoint M.",
+          "grids": [
+            {
+              "pattern": "columns",
+              "count": 12,
+              "gutter": 16,
+              "margin": 24
+            }
+          ]
+        },
+        {
+          "name": "M (blue)",
+          "token": "m-blue",
+          "type": "grid",
+          "description": "Use this when the design is for Breakpoint M. Can be used when there is nested grid.",
+          "grids": [
+            {
+              "pattern": "columns",
+              "count": 12,
+              "gutter": 16,
+              "margin": 24
+            }
+          ]
+        },
+        {
+          "name": "L (red) - 992px to 1199px",
+          "token": "l-red-992px-to-1199px",
+          "type": "grid",
+          "description": "Use this when the design is for Breakpoint L.",
+          "grids": [
+            {
+              "pattern": "columns",
+              "count": 12,
+              "gutter": 24,
+              "margin": 16
+            }
+          ]
+        },
+        {
+          "name": "L (blue)",
+          "token": "l-blue",
+          "type": "grid",
+          "description": "Use this when the design is for Breakpoint L. Can be used when there is nested grid.",
+          "grids": [
+            {
+              "pattern": "columns",
+              "count": 12,
+              "gutter": 24,
+              "margin": 16
+            }
+          ]
+        },
+        {
+          "name": "XL (red) - 1200px and above",
+          "token": "xl-red-1200px-and-above",
+          "type": "grid",
+          "description": "Use this when the design is for Breakpoint XL.",
+          "grids": [
+            {
+              "pattern": "columns",
+              "count": 12,
+              "gutter": 24,
+              "margin": 30
+            }
+          ]
+        },
+        {
+          "name": "XL (blue)",
+          "token": "xl-blue",
+          "type": "grid",
+          "description": "Use this when the design is for Breakpoint XL. Can be used when there is nested grid.",
+          "grids": [
+            {
+              "pattern": "columns",
+              "count": 12,
+              "gutter": 24,
+              "margin": 30
+            }
+          ]
+        },
+        {
+          "name": "XL & L (no margin) - 992px and above",
+          "token": "xl-l-no-margin-992px-and-above",
+          "type": "grid",
+          "description": "Removed margin for specific cases where nested layouts does not require additional margin. \n=======\nNote: XL & L has the same gutter, just different margin. Hence, we can use the same grid style.",
+          "grids": [
+            {
+              "pattern": "columns",
+              "count": 12,
+              "gutter": 24,
+              "margin": 0
+            }
+          ]
+        },
+        {
+          "name": "AEM Grid - 12 columns",
+          "token": "aem-grid-12-columns",
+          "type": "grid",
+          "description": "Use this to view the base AEM grid columns (i.e. without gutter and margin).",
+          "grids": [
+            {
+              "pattern": "columns",
+              "count": 12,
+              "gutter": 20,
+              "margin": 0
+            }
+          ]
+        },
+        {
+          "name": "Accordion section stack",
+          "token": "accordion-section-stack",
+          "type": "grid",
+          "description": "Specific grid setting for accordion section stack",
+          "grids": [
+            {
+              "pattern": "columns",
+              "count": 12,
+              "gutter": 16,
+              "margin": 24
+            }
+          ]
+        },
+        {
+          "name": "Grid layout (auto)",
+          "token": "grid-layout-auto",
+          "type": "grid",
+          "grids": [
+            {
+              "pattern": "columns",
+              "count": 6,
+              "gutter": 16,
+              "margin": 16
+            }
+          ]
+        }
+      ]
+    },
+    "collections": {
+      "B1 - Foundation style": {
+        "id": "VariableCollectionId:2:19",
+        "modes": [
+          {
+            "id": "2:4",
+            "name": "Mode 1"
+          }
+        ],
+        "variables": {
+          "colors": [
+            {
+              "name": "Text link visited state",
+              "token": "text-link-visited-state",
+              "type": "color",
+              "value": "#5d7474"
+            }
+          ],
+          "numbers": [
+            {
+              "name": "Spacing/spacing_4",
+              "token": "spacing-spacing-4",
+              "type": "float",
+              "value": 4,
+              "description": "Used for setting spacing between components or elements."
+            },
+            {
+              "name": "Spacing/spacing_8",
+              "token": "spacing-spacing-8",
+              "type": "float",
+              "value": 8,
+              "description": "Used for setting spacing between components or elements."
+            },
+            {
+              "name": "Spacing/spacing_12",
+              "token": "spacing-spacing-12",
+              "type": "float",
+              "value": 12,
+              "description": "Used for setting spacing between components or elements."
+            },
+            {
+              "name": "Spacing/spacing_16",
+              "token": "spacing-spacing-16",
+              "type": "float",
+              "value": 16,
+              "description": "Used for setting spacing between components or elements."
+            },
+            {
+              "name": "Spacing/spacing_18",
+              "token": "spacing-spacing-18",
+              "type": "float",
+              "value": 18,
+              "description": "Used for setting spacing between components or elements."
+            },
+            {
+              "name": "Spacing/spacing_24",
+              "token": "spacing-spacing-24",
+              "type": "float",
+              "value": 24,
+              "description": "Used for setting spacing between components or elements."
+            },
+            {
+              "name": "Spacing/spacing_32",
+              "token": "spacing-spacing-32",
+              "type": "float",
+              "value": 32,
+              "description": "Used for setting spacing between components or elements."
+            },
+            {
+              "name": "Spacing/spacing_40",
+              "token": "spacing-spacing-40",
+              "type": "float",
+              "value": 40,
+              "description": "Used for setting spacing between components or elements."
+            },
+            {
+              "name": "Spacing/spacing_48",
+              "token": "spacing-spacing-48",
+              "type": "float",
+              "value": 48,
+              "description": "Used for setting spacing between components or elements."
+            },
+            {
+              "name": "Spacing/spacing_56",
+              "token": "spacing-spacing-56",
+              "type": "float",
+              "value": 56,
+              "description": "Used for setting spacing between components or elements."
+            },
+            {
+              "name": "Spacing/spacing_64",
+              "token": "spacing-spacing-64",
+              "type": "float",
+              "value": 64,
+              "description": "Used for setting spacing between components or elements."
+            },
+            {
+              "name": "Spacing/spacing_72",
+              "token": "spacing-spacing-72",
+              "type": "float",
+              "value": 72,
+              "description": "Used for setting spacing between components or elements."
+            },
+            {
+              "name": "Spacing/spacing_80",
+              "token": "spacing-spacing-80",
+              "type": "float",
+              "value": 80,
+              "description": "Used for setting spacing between components or elements."
+            },
+            {
+              "name": "Width/Breakpoint XL",
+              "token": "width-breakpoint-xl",
+              "type": "float",
+              "value": 1440
+            },
+            {
+              "name": "Width/Breakpoint L",
+              "token": "width-breakpoint-l",
+              "type": "float",
+              "value": 992
+            },
+            {
+              "name": "Width/Breakpoint M",
+              "token": "width-breakpoint-m",
+              "type": "float",
+              "value": 768
+            },
+            {
+              "name": "Width/Breakpoint S",
+              "token": "width-breakpoint-s",
+              "type": "float",
+              "value": 375
+            },
+            {
+              "name": "Text size/text_14",
+              "token": "text-size-text-14",
+              "type": "float",
+              "value": 14
+            },
+            {
+              "name": "Text size/text_16",
+              "token": "text-size-text-16",
+              "type": "float",
+              "value": 16
+            },
+            {
+              "name": "Text size/text_24",
+              "token": "text-size-text-24",
+              "type": "float",
+              "value": 24
+            },
+            {
+              "name": "Text size/text_32",
+              "token": "text-size-text-32",
+              "type": "float",
+              "value": 32
+            },
+            {
+              "name": "Text size/text_40",
+              "token": "text-size-text-40",
+              "type": "float",
+              "value": 40
+            },
+            {
+              "name": "Text size/text_48",
+              "token": "text-size-text-48",
+              "type": "float",
+              "value": 48
+            },
+            {
+              "name": "Spacing/spacing_0",
+              "token": "spacing-spacing-0",
+              "type": "float",
+              "value": 0,
+              "description": "Used for setting spacing between components or elements."
+            },
+            {
+              "name": "Simulated mobile device height",
+              "token": "simulated-mobile-device-height",
+              "type": "float",
+              "value": 812
+            }
+          ],
+          "strings": [],
+          "booleans": []
+        }
+      },
+      "B2 - Icon pillar colours": {
+        "id": "VariableCollectionId:183:5240",
+        "modes": [
+          {
+            "id": "183:0",
+            "name": "Value"
+          }
+        ],
+        "variables": {
+          "colors": [
+            {
+              "name": "Retirement",
+              "token": "retirement",
+              "type": "color",
+              "value": "#f1cee8",
+              "values": {
+                "Value": "#f1cee8"
+              }
+            },
+            {
+              "name": "Housing",
+              "token": "housing",
+              "type": "color",
+              "value": "#ffbcb0",
+              "values": {
+                "Value": "#ffbcb0"
+              }
+            },
+            {
+              "name": "Overview",
+              "token": "overview",
+              "type": "color",
+              "value": "#bae4de",
+              "values": {
+                "Value": "#bae4de"
+              }
+            },
+            {
+              "name": "Education",
+              "token": "education",
+              "type": "color",
+              "value": "#ffeea2",
+              "values": {
+                "Value": "#ffeea2"
+              }
+            },
+            {
+              "name": "Healthcare",
+              "token": "healthcare",
+              "type": "color",
+              "value": "#ceddf7",
+              "values": {
+                "Value": "#ceddf7"
+              }
+            },
+            {
+              "name": "Investment",
+              "token": "investment",
+              "type": "color",
+              "value": "#d7dfe0",
+              "values": {
+                "Value": "#d7dfe0"
+              }
+            },
+            {
+              "name": "Employer",
+              "token": "employer",
+              "type": "color",
+              "value": "#eeca92",
+              "values": {
+                "Value": "#eeca92"
+              }
+            },
+            {
+              "name": "Self-Employed",
+              "token": "self-employed",
+              "type": "color",
+              "value": "#d7cef8",
+              "values": {
+                "Value": "#d7cef8"
+              }
+            },
+            {
+              "name": "Growing Savings",
+              "token": "growing-savings",
+              "type": "color",
+              "value": "#cfe4d1",
+              "values": {
+                "Value": "#cfe4d1"
+              }
+            },
+            {
+              "name": "Account Services",
+              "token": "account-services",
+              "type": "color",
+              "value": "#b3efff",
+              "values": {
+                "Value": "#b3efff"
+              }
+            },
+            {
+              "name": "General",
+              "token": "general",
+              "type": "color",
+              "value": "#bae4de",
+              "values": {
+                "Value": "#bae4de"
+              }
+            }
+          ],
+          "numbers": [],
+          "strings": [],
+          "booleans": []
+        }
+      },
+      "C1 - Component (common breakpoint)": {
+        "id": "VariableCollectionId:460:3299",
+        "modes": [
+          {
+            "id": "460:0",
+            "name": "Value"
+          }
+        ],
+        "variables": {
+          "colors": [],
+          "numbers": [
+            {
+              "name": "Standard button/56px",
+              "token": "standard-button-56px",
+              "type": "float",
+              "value": 56,
+              "values": {
+                "Value": 56
+              },
+              "description": "Set button height to 56px (large)."
+            },
+            {
+              "name": "Standard button/48px",
+              "token": "standard-button-48px",
+              "type": "float",
+              "value": 48,
+              "values": {
+                "Value": 48
+              },
+              "description": "Set button height to 48px (medium)."
+            },
+            {
+              "name": "Section header/Top padding",
+              "token": "section-header-top-padding",
+              "type": "float",
+              "value": 40,
+              "values": {
+                "Value": 40
+              }
+            },
+            {
+              "name": "Section header/Bottom padding",
+              "token": "section-header-bottom-padding",
+              "type": "float",
+              "value": 24,
+              "values": {
+                "Value": 24
+              }
+            }
+          ],
+          "strings": [
+            {
+              "name": "Global header/Member site",
+              "token": "global-header-member-site",
+              "type": "string",
+              "value": "Member",
+              "values": {
+                "Value": "Member"
+              }
+            },
+            {
+              "name": "Global header/Employer & Business site",
+              "token": "global-header-employer-business-site",
+              "type": "string",
+              "value": "Employer/Business",
+              "values": {
+                "Value": "Employer/Business"
+              }
+            },
+            {
+              "name": "Breakpoint value/M & S",
+              "token": "breakpoint-value-m-s",
+              "type": "string",
+              "value": "M & S",
+              "values": {
+                "Value": "M & S"
+              }
+            },
+            {
+              "name": "Breakpoint value/XL & L",
+              "token": "breakpoint-value-xl-l",
+              "type": "string",
+              "value": "XL & L",
+              "values": {
+                "Value": "XL & L"
+              }
+            }
+          ],
+          "booleans": []
+        }
+      },
+      "A1 - Base S breakpoint": {
+        "id": "VariableCollectionId:471:134",
+        "modes": [
+          {
+            "id": "471:0",
+            "name": "Breakpoint S"
+          },
+          {
+            "id": "471:1",
+            "name": "Breakpoint M"
+          },
+          {
+            "id": "471:2",
+            "name": "Breakpoint L"
+          },
+          {
+            "id": "471:3",
+            "name": "Breakpoint XL"
+          }
+        ],
+        "variables": {
+          "colors": [
+            {
+              "name": "[A1] Page-level/Form background",
+              "token": "a1-page-level-form-background",
+              "type": "color",
+              "value": "#ffffff",
+              "values": {
+                "Breakpoint S": "#ffffff",
+                "Breakpoint M": "#ffffff",
+                "Breakpoint L": "#f7f7f7",
+                "Breakpoint XL": "#f7f7f7"
+              }
+            }
+          ],
+          "numbers": [
+            {
+              "name": "[A1] Wrapper padding/Parent/Left & Right (LR)",
+              "token": "a1-wrapper-padding-parent-left-right-lr",
+              "type": "float",
+              "value": 8,
+              "values": {
+                "Breakpoint S": 8,
+                "Breakpoint M": 16,
+                "Breakpoint L": 4,
+                "Breakpoint XL": 18
+              }
+            },
+            {
+              "name": "[A1] Wrapper padding/Parent/M & S LR 0px",
+              "token": "a1-wrapper-padding-parent-m-s-lr-0px",
+              "type": "float",
+              "value": 0,
+              "values": {
+                "Breakpoint S": 0,
+                "Breakpoint M": 0,
+                "Breakpoint L": 4,
+                "Breakpoint XL": 18
+              }
+            },
+            {
+              "name": "[A1] Wrapper padding/Parent/Top & Bottom (TB)",
+              "token": "a1-wrapper-padding-parent-top-bottom-tb",
+              "type": "float",
+              "value": 16,
+              "values": {
+                "Breakpoint S": 16,
+                "Breakpoint M": 16,
+                "Breakpoint L": 12,
+                "Breakpoint XL": 12
+              }
+            },
+            {
+              "name": "[A1] Wrapper padding/Parent/M & S TB 0px",
+              "token": "a1-wrapper-padding-parent-m-s-tb-0px",
+              "type": "float",
+              "value": 0,
+              "values": {
+                "Breakpoint S": 0,
+                "Breakpoint M": 0,
+                "Breakpoint L": 12,
+                "Breakpoint XL": 12
+              }
+            },
+            {
+              "name": "[A1] Wrapper padding/Component/Left & Right (LR)",
+              "token": "a1-wrapper-padding-component-left-right-lr",
+              "type": "float",
+              "value": 8,
+              "values": {
+                "Breakpoint S": 8,
+                "Breakpoint M": 8,
+                "Breakpoint L": 12,
+                "Breakpoint XL": 12
+              }
+            },
+            {
+              "name": "[A1] Wrapper padding/Component/M & S LR 0px",
+              "token": "a1-wrapper-padding-component-m-s-lr-0px",
+              "type": "float",
+              "value": 0,
+              "values": {
+                "Breakpoint S": 0,
+                "Breakpoint M": 0,
+                "Breakpoint L": 12,
+                "Breakpoint XL": 12
+              }
+            },
+            {
+              "name": "[A1] Wrapper padding/Component/Top & Bottom (TB)",
+              "token": "a1-wrapper-padding-component-top-bottom-tb",
+              "type": "float",
+              "value": 16,
+              "values": {
+                "Breakpoint S": 16,
+                "Breakpoint M": 16,
+                "Breakpoint L": 12,
+                "Breakpoint XL": 12
+              }
+            },
+            {
+              "name": "[A1] Wrapper padding/Component/M & S TB 0px",
+              "token": "a1-wrapper-padding-component-m-s-tb-0px",
+              "type": "float",
+              "value": 0,
+              "values": {
+                "Breakpoint S": 0,
+                "Breakpoint M": 0,
+                "Breakpoint L": 12,
+                "Breakpoint XL": 12
+              }
+            },
+            {
+              "name": "[A1] Spacer height/Spacer_8 (M&S_0)",
+              "token": "a1-spacer-height-spacer-8-m-s-0",
+              "type": "float",
+              "value": 0,
+              "values": {
+                "Breakpoint S": 0,
+                "Breakpoint M": 0,
+                "Breakpoint L": 8,
+                "Breakpoint XL": 8
+              }
+            },
+            {
+              "name": "[A1] Spacer height/Spacer_16 (M&S_0)",
+              "token": "a1-spacer-height-spacer-16-m-s-0",
+              "type": "float",
+              "value": 0,
+              "values": {
+                "Breakpoint S": 0,
+                "Breakpoint M": 0,
+                "Breakpoint L": 16,
+                "Breakpoint XL": 16
+              }
+            },
+            {
+              "name": "[A1] Spacer height/Spacer_40 (M&S_0)",
+              "token": "a1-spacer-height-spacer-40-m-s-0",
+              "type": "float",
+              "value": 0,
+              "values": {
+                "Breakpoint S": 0,
+                "Breakpoint M": 0,
+                "Breakpoint L": 40,
+                "Breakpoint XL": 40
+              }
+            },
+            {
+              "name": "[A1] Page-level/Base container/Max width",
+              "token": "a1-page-level-base-container-max-width",
+              "type": "float",
+              "value": 767,
+              "values": {
+                "Breakpoint S": 767,
+                "Breakpoint M": 991,
+                "Breakpoint L": 1199,
+                "Breakpoint XL": 1200
+              }
+            },
+            {
+              "name": "[A1] Page-level/Base container/[Form] Min width",
+              "token": "a1-page-level-base-container-form-min-width",
+              "type": "float",
+              "value": 375,
+              "values": {
+                "Breakpoint S": 375,
+                "Breakpoint M": 768,
+                "Breakpoint L": 960,
+                "Breakpoint XL": 1140
+              }
+            },
+            {
+              "name": "[A1] Screen width/Min-width",
+              "token": "a1-screen-width-min-width",
+              "type": "float",
+              "value": 375,
+              "values": {
+                "Breakpoint S": 375,
+                "Breakpoint M": 768,
+                "Breakpoint L": 992,
+                "Breakpoint XL": 1200
+              }
+            },
+            {
+              "name": "[A1] Screen width/Default width",
+              "token": "a1-screen-width-default-width",
+              "type": "float",
+              "value": 375,
+              "values": {
+                "Breakpoint S": 375,
+                "Breakpoint M": 768,
+                "Breakpoint L": 992,
+                "Breakpoint XL": 1440
+              }
+            },
+            {
+              "name": "[A1] Screen width/Max-width",
+              "token": "a1-screen-width-max-width",
+              "type": "float",
+              "value": 767,
+              "values": {
+                "Breakpoint S": 767,
+                "Breakpoint M": 991,
+                "Breakpoint L": 1199,
+                "Breakpoint XL": 1440
+              }
+            },
+            {
+              "name": "[A1] Page-level/Nested container/6-col at XL & L",
+              "token": "a1-page-level-nested-container-6-col-at-xl-l",
+              "type": "float",
+              "value": 359,
+              "values": {
+                "Breakpoint S": 359,
+                "Breakpoint M": 736,
+                "Breakpoint L": 476,
+                "Breakpoint XL": 552
+              }
+            },
+            {
+              "name": "[A1] Page-level/Nested container/8-col at XL & L",
+              "token": "a1-page-level-nested-container-8-col-at-xl-l",
+              "type": "float",
+              "value": 359,
+              "values": {
+                "Breakpoint S": 359,
+                "Breakpoint M": 736,
+                "Breakpoint L": 634,
+                "Breakpoint XL": 736
+              }
+            },
+            {
+              "name": "[A1] Page-level/Nested container/12-col at XL & L",
+              "token": "a1-page-level-nested-container-12-col-at-xl-l",
+              "type": "float",
+              "value": 359,
+              "values": {
+                "Breakpoint S": 359,
+                "Breakpoint M": 736,
+                "Breakpoint L": 952,
+                "Breakpoint XL": 1104
+              }
+            },
+            {
+              "name": "[A1] Component/Text width/Max width",
+              "token": "a1-component-text-width-max-width",
+              "type": "float",
+              "value": 767,
+              "values": {
+                "Breakpoint S": 767,
+                "Breakpoint M": 991,
+                "Breakpoint L": 741,
+                "Breakpoint XL": 741
+              }
+            },
+            {
+              "name": "[A1] Wrapper padding/Parent/No padding",
+              "token": "a1-wrapper-padding-parent-no-padding",
+              "type": "float",
+              "value": 0,
+              "values": {
+                "Breakpoint S": 0,
+                "Breakpoint M": 0,
+                "Breakpoint L": 0,
+                "Breakpoint XL": 0
+              }
+            },
+            {
+              "name": "[A1] Wrapper padding/Component/No padding",
+              "token": "a1-wrapper-padding-component-no-padding",
+              "type": "float",
+              "value": 0,
+              "values": {
+                "Breakpoint S": 0,
+                "Breakpoint M": 0,
+                "Breakpoint L": 0,
+                "Breakpoint XL": 0
+              }
+            },
+            {
+              "name": "[A1] Wrapper padding/Grid margin/No padding",
+              "token": "a1-wrapper-padding-grid-margin-no-padding",
+              "type": "float",
+              "value": 0,
+              "values": {
+                "Breakpoint S": 0,
+                "Breakpoint M": 0,
+                "Breakpoint L": 0,
+                "Breakpoint XL": 0
+              }
+            },
+            {
+              "name": "[A1] Wrapper padding/Grid margin/Left & Right (LR)",
+              "token": "a1-wrapper-padding-grid-margin-left-right-lr",
+              "type": "float",
+              "value": 16,
+              "values": {
+                "Breakpoint S": 16,
+                "Breakpoint M": 24,
+                "Breakpoint L": 16,
+                "Breakpoint XL": 30
+              }
+            },
+            {
+              "name": "[A1] Wrapper padding/Grid margin/M & S LR 0px",
+              "token": "a1-wrapper-padding-grid-margin-m-s-lr-0px",
+              "type": "float",
+              "value": 0,
+              "values": {
+                "Breakpoint S": 0,
+                "Breakpoint M": 0,
+                "Breakpoint L": 16,
+                "Breakpoint XL": 30
+              }
+            },
+            {
+              "name": "[A1] Wrapper padding/Grid margin/Top & Bottom (TB)",
+              "token": "a1-wrapper-padding-grid-margin-top-bottom-tb",
+              "type": "float",
+              "value": 32,
+              "values": {
+                "Breakpoint S": 32,
+                "Breakpoint M": 32,
+                "Breakpoint L": 24,
+                "Breakpoint XL": 24
+              }
+            },
+            {
+              "name": "[A1] Wrapper padding/Grid margin/M & S TB 0px",
+              "token": "a1-wrapper-padding-grid-margin-m-s-tb-0px",
+              "type": "float",
+              "value": 0,
+              "values": {
+                "Breakpoint S": 0,
+                "Breakpoint M": 0,
+                "Breakpoint L": 24,
+                "Breakpoint XL": 24
+              }
+            },
+            {
+              "name": "[A1] Component/Announcement bar/Gap",
+              "token": "a1-component-announcement-bar-gap",
+              "type": "float",
+              "value": 8,
+              "values": {
+                "Breakpoint S": 8,
+                "Breakpoint M": 8,
+                "Breakpoint L": 16,
+                "Breakpoint XL": 16
+              },
+              "description": "Gap between text and cross button"
+            },
+            {
+              "name": "[A1] Component/State info box/Top & bottom padding",
+              "token": "a1-component-state-info-box-top-bottom-padding",
+              "type": "float",
+              "value": 16,
+              "values": {
+                "Breakpoint S": 16,
+                "Breakpoint M": 16,
+                "Breakpoint L": 80,
+                "Breakpoint XL": 80
+              }
+            },
+            {
+              "name": "[A1] Component/State info box/Size",
+              "token": "a1-component-state-info-box-size",
+              "type": "float",
+              "value": 40,
+              "values": {
+                "Breakpoint S": 40,
+                "Breakpoint M": 40,
+                "Breakpoint L": 56,
+                "Breakpoint XL": 56
+              }
+            },
+            {
+              "name": "[A1] Component/Section heading/Top padding",
+              "token": "a1-component-section-heading-top-padding",
+              "type": "float",
+              "value": 0,
+              "values": {
+                "Breakpoint S": 0,
+                "Breakpoint M": 0,
+                "Breakpoint L": 40,
+                "Breakpoint XL": 40
+              }
+            },
+            {
+              "name": "[A1] Component/Section heading/Bottom padding",
+              "token": "a1-component-section-heading-bottom-padding",
+              "type": "float",
+              "value": 0,
+              "values": {
+                "Breakpoint S": 0,
+                "Breakpoint M": 0,
+                "Breakpoint L": 24,
+                "Breakpoint XL": 24
+              }
+            },
+            {
+              "name": "[A1] Typography/Headline 1/Font size",
+              "token": "a1-typography-headline-1-font-size",
+              "type": "float",
+              "value": 40,
+              "values": {
+                "Breakpoint S": 40,
+                "Breakpoint M": 40,
+                "Breakpoint L": 48,
+                "Breakpoint XL": 48
+              }
+            },
+            {
+              "name": "[A1] Typography/Headline 1/Line height",
+              "token": "a1-typography-headline-1-line-height",
+              "type": "float",
+              "value": 56,
+              "values": {
+                "Breakpoint S": 56,
+                "Breakpoint M": 56,
+                "Breakpoint L": 72,
+                "Breakpoint XL": 72
+              }
+            },
+            {
+              "name": "[A1] Typography/Headline 1/Letter spacing",
+              "token": "a1-typography-headline-1-letter-spacing",
+              "type": "float",
+              "value": -1,
+              "values": {
+                "Breakpoint S": -1,
+                "Breakpoint M": -1,
+                "Breakpoint L": 0.11999999731779099,
+                "Breakpoint XL": 0.11999999731779099
+              }
+            },
+            {
+              "name": "[A1] Typography/Headline 1/Paragraph spacing",
+              "token": "a1-typography-headline-1-paragraph-spacing",
+              "type": "float",
+              "value": 80,
+              "values": {
+                "Breakpoint S": 80,
+                "Breakpoint M": 80,
+                "Breakpoint L": 96,
+                "Breakpoint XL": 96
+              }
+            },
+            {
+              "name": "[A1] Typography/Headline 2/Font size",
+              "token": "a1-typography-headline-2-font-size",
+              "type": "float",
+              "value": 32,
+              "values": {
+                "Breakpoint S": 32,
+                "Breakpoint M": 32,
+                "Breakpoint L": 40,
+                "Breakpoint XL": 40
+              }
+            },
+            {
+              "name": "[A1] Typography/Headline 2/Line height",
+              "token": "a1-typography-headline-2-line-height",
+              "type": "float",
+              "value": 48,
+              "values": {
+                "Breakpoint S": 48,
+                "Breakpoint M": 48,
+                "Breakpoint L": 56,
+                "Breakpoint XL": 56
+              }
+            },
+            {
+              "name": "[A1] Typography/Headline 2/Letter spacing",
+              "token": "a1-typography-headline-2-letter-spacing",
+              "type": "float",
+              "value": -0.75,
+              "values": {
+                "Breakpoint S": -0.75,
+                "Breakpoint M": -0.75,
+                "Breakpoint L": -1,
+                "Breakpoint XL": -1
+              }
+            },
+            {
+              "name": "[A1] Typography/Headline 2/Paragraph spacing",
+              "token": "a1-typography-headline-2-paragraph-spacing",
+              "type": "float",
+              "value": 64,
+              "values": {
+                "Breakpoint S": 64,
+                "Breakpoint M": 64,
+                "Breakpoint L": 80,
+                "Breakpoint XL": 80
+              }
+            },
+            {
+              "name": "[A1] Typography/Headline 3/Font size",
+              "token": "a1-typography-headline-3-font-size",
+              "type": "float",
+              "value": 24,
+              "values": {
+                "Breakpoint S": 24,
+                "Breakpoint M": 24,
+                "Breakpoint L": 32,
+                "Breakpoint XL": 32
+              }
+            },
+            {
+              "name": "[A1] Typography/Headline 3/Line height",
+              "token": "a1-typography-headline-3-line-height",
+              "type": "float",
+              "value": 32,
+              "values": {
+                "Breakpoint S": 32,
+                "Breakpoint M": 32,
+                "Breakpoint L": 48,
+                "Breakpoint XL": 48
+              }
+            },
+            {
+              "name": "[A1] Typography/Headline 3/Letter spacing",
+              "token": "a1-typography-headline-3-letter-spacing",
+              "type": "float",
+              "value": -0.5,
+              "values": {
+                "Breakpoint S": -0.5,
+                "Breakpoint M": -0.5,
+                "Breakpoint L": -0.75,
+                "Breakpoint XL": -0.75
+              }
+            },
+            {
+              "name": "[A1] Typography/Headline 3/Paragraph spacing",
+              "token": "a1-typography-headline-3-paragraph-spacing",
+              "type": "float",
+              "value": 48,
+              "values": {
+                "Breakpoint S": 48,
+                "Breakpoint M": 48,
+                "Breakpoint L": 64,
+                "Breakpoint XL": 64
+              }
+            },
+            {
+              "name": "[A1] Component/Global header/Top and bottom padding",
+              "token": "a1-component-global-header-top-and-bottom-padding",
+              "type": "float",
+              "value": 8,
+              "values": {
+                "Breakpoint S": 8,
+                "Breakpoint M": 8,
+                "Breakpoint L": 4,
+                "Breakpoint XL": 4
+              }
+            },
+            {
+              "name": "[A1] Dashboard padding/Wrapper/Left & Right (LR)",
+              "token": "a1-dashboard-padding-wrapper-left-right-lr",
+              "type": "float",
+              "value": 0,
+              "values": {
+                "Breakpoint S": 0,
+                "Breakpoint M": 0,
+                "Breakpoint L": 16,
+                "Breakpoint XL": 30
+              }
+            },
+            {
+              "name": "[A1] Dashboard padding/Wrapper/Top & Bottom (TB)",
+              "token": "a1-dashboard-padding-wrapper-top-bottom-tb",
+              "type": "float",
+              "value": 16,
+              "values": {
+                "Breakpoint S": 16,
+                "Breakpoint M": 16,
+                "Breakpoint L": 24,
+                "Breakpoint XL": 24
+              }
+            },
+            {
+              "name": "[A1] Dashboard padding/Spacer above footer/Top & Bottom (TB)",
+              "token": "a1-dashboard-padding-spacer-above-footer-top-bottom-tb",
+              "type": "float",
+              "value": 28,
+              "values": {
+                "Breakpoint S": 28,
+                "Breakpoint M": 28,
+                "Breakpoint L": 24,
+                "Breakpoint XL": 24
+              }
+            },
+            {
+              "name": "[A1] Dashboard padding/Selector/Left & Right (LR)",
+              "token": "a1-dashboard-padding-selector-left-right-lr",
+              "type": "float",
+              "value": 16,
+              "values": {
+                "Breakpoint S": 16,
+                "Breakpoint M": 16,
+                "Breakpoint L": 16,
+                "Breakpoint XL": 30
+              }
+            },
+            {
+              "name": "[A1] Dashboard padding/Selector/Top & Bottom (TB)",
+              "token": "a1-dashboard-padding-selector-top-bottom-tb",
+              "type": "float",
+              "value": 16,
+              "values": {
+                "Breakpoint S": 16,
+                "Breakpoint M": 16,
+                "Breakpoint L": 24,
+                "Breakpoint XL": 24
+              }
+            },
+            {
+              "name": "[A1] Dashboard padding/Selector/Gap",
+              "token": "a1-dashboard-padding-selector-gap",
+              "type": "float",
+              "value": 32,
+              "values": {
+                "Breakpoint S": 32,
+                "Breakpoint M": 32,
+                "Breakpoint L": 24,
+                "Breakpoint XL": 24
+              }
+            },
+            {
+              "name": "[A1] Component/Sub-section heading/Text max width (at max screen size)",
+              "token": "a1-component-sub-section-heading-text-max-width-at-max-screen-size",
+              "type": "float",
+              "value": 671,
+              "values": {
+                "Breakpoint S": 671,
+                "Breakpoint M": 879,
+                "Breakpoint L": 741,
+                "Breakpoint XL": 741
+              }
+            },
+            {
+              "name": "[A1] Component/Sub-section heading/Text max width (at min screen size)",
+              "token": "a1-component-sub-section-heading-text-max-width-at-min-screen-size",
+              "type": "float",
+              "value": 279,
+              "values": {
+                "Breakpoint S": 279,
+                "Breakpoint M": 656,
+                "Breakpoint L": 741,
+                "Breakpoint XL": 741
+              }
+            },
+            {
+              "name": "[A1] Component/Sub-section heading/Top padding (stacked)",
+              "token": "a1-component-sub-section-heading-top-padding-stacked",
+              "type": "float",
+              "value": 16,
+              "values": {
+                "Breakpoint S": 16,
+                "Breakpoint M": 16,
+                "Breakpoint L": 8,
+                "Breakpoint XL": 8
+              }
+            },
+            {
+              "name": "[A1] Component/Line item/Left & right padding",
+              "token": "a1-component-line-item-left-right-padding",
+              "type": "float",
+              "value": 8,
+              "values": {
+                "Breakpoint S": 8,
+                "Breakpoint M": 8,
+                "Breakpoint L": 12,
+                "Breakpoint XL": 12
+              }
+            },
+            {
+              "name": "[A1] Component/Line item/Top & bottom padding",
+              "token": "a1-component-line-item-top-bottom-padding",
+              "type": "float",
+              "value": 16,
+              "values": {
+                "Breakpoint S": 16,
+                "Breakpoint M": 16,
+                "Breakpoint L": 12,
+                "Breakpoint XL": 12
+              }
+            },
+            {
+              "name": "[A1] Component/Line item/Additional element gap",
+              "token": "a1-component-line-item-additional-element-gap",
+              "type": "float",
+              "value": 24,
+              "values": {
+                "Breakpoint S": 24,
+                "Breakpoint M": 24,
+                "Breakpoint L": 24,
+                "Breakpoint XL": 24
+              }
+            },
+            {
+              "name": "[A1] Page-level/Base container/[Dashboard card] Min width",
+              "token": "a1-page-level-base-container-dashboard-card-min-width",
+              "type": "float",
+              "value": 375,
+              "values": {
+                "Breakpoint S": 375,
+                "Breakpoint M": 768,
+                "Breakpoint L": 960,
+                "Breakpoint XL": 1140
+              }
+            },
+            {
+              "name": "[A1] Component/Tab/Tab max width",
+              "token": "a1-component-tab-tab-max-width",
+              "type": "float",
+              "value": 200,
+              "values": {
+                "Breakpoint S": 200,
+                "Breakpoint M": 200,
+                "Breakpoint L": 380,
+                "Breakpoint XL": 380
+              }
+            },
+            {
+              "name": "[A1] Component/Tab/Text max width",
+              "token": "a1-component-tab-text-max-width",
+              "type": "float",
+              "value": 176,
+              "values": {
+                "Breakpoint S": 176,
+                "Breakpoint M": 176,
+                "Breakpoint L": 356,
+                "Breakpoint XL": 356
+              }
+            },
+            {
+              "name": "[A1] Page-level/Base container/6-col at XL & L",
+              "token": "a1-page-level-base-container-6-col-at-xl-l",
+              "type": "float",
+              "value": 359,
+              "values": {
+                "Breakpoint S": 359,
+                "Breakpoint M": 736,
+                "Breakpoint L": 492,
+                "Breakpoint XL": 582
+              }
+            },
+            {
+              "name": "[A1] Page-level/Base container/8-col at XL & L",
+              "token": "a1-page-level-base-container-8-col-at-xl-l",
+              "type": "float",
+              "value": 359,
+              "values": {
+                "Breakpoint S": 359,
+                "Breakpoint M": 736,
+                "Breakpoint L": 656,
+                "Breakpoint XL": 776
+              }
+            },
+            {
+              "name": "[A1] Page-level/Base container/12-col at XL & L",
+              "token": "a1-page-level-base-container-12-col-at-xl-l",
+              "type": "float",
+              "value": 359,
+              "values": {
+                "Breakpoint S": 359,
+                "Breakpoint M": 736,
+                "Breakpoint L": 984,
+                "Breakpoint XL": 1164
+              }
+            },
+            {
+              "name": "[A1] Member dashboard/Page layer/Gap",
+              "token": "a1-member-dashboard-page-layer-gap",
+              "type": "float",
+              "value": 0,
+              "values": {
+                "Breakpoint S": 0,
+                "Breakpoint M": 0,
+                "Breakpoint L": -242,
+                "Breakpoint XL": -242
+              }
+            },
+            {
+              "name": "[A1] Member dashboard/Page layer/Page content top padding",
+              "token": "a1-member-dashboard-page-layer-page-content-top-padding",
+              "type": "float",
+              "value": 0,
+              "values": {
+                "Breakpoint S": 0,
+                "Breakpoint M": 0,
+                "Breakpoint L": 242,
+                "Breakpoint XL": 242
+              }
+            },
+            {
+              "name": "[A1] Statement/Filter/Top and bottom padding",
+              "token": "a1-statement-filter-top-and-bottom-padding",
+              "type": "float",
+              "value": 0,
+              "values": {
+                "Breakpoint S": 0,
+                "Breakpoint M": 0,
+                "Breakpoint L": 24,
+                "Breakpoint XL": 24
+              }
+            },
+            {
+              "name": "[A1] Statement/Pagination/Top and bottom padding",
+              "token": "a1-statement-pagination-top-and-bottom-padding",
+              "type": "float",
+              "value": 16,
+              "values": {
+                "Breakpoint S": 16,
+                "Breakpoint M": 16,
+                "Breakpoint L": 24,
+                "Breakpoint XL": 24
+              }
+            },
+            {
+              "name": "[A1] Spacer height/Spacer_8",
+              "token": "a1-spacer-height-spacer-8",
+              "type": "float",
+              "value": 8,
+              "values": {
+                "Breakpoint S": 8,
+                "Breakpoint M": 8,
+                "Breakpoint L": 8,
+                "Breakpoint XL": 8
+              }
+            },
+            {
+              "name": "[A1] Spacer height/Spacer_16",
+              "token": "a1-spacer-height-spacer-16",
+              "type": "float",
+              "value": 16,
+              "values": {
+                "Breakpoint S": 16,
+                "Breakpoint M": 16,
+                "Breakpoint L": 16,
+                "Breakpoint XL": 16
+              }
+            },
+            {
+              "name": "[A1] Spacer height/Spacer_40",
+              "token": "a1-spacer-height-spacer-40",
+              "type": "float",
+              "value": 40,
+              "values": {
+                "Breakpoint S": 40,
+                "Breakpoint M": 40,
+                "Breakpoint L": 40,
+                "Breakpoint XL": 40
+              }
+            },
+            {
+              "name": "[A1] Spacer height/Spacer_8 (XL&L_0)",
+              "token": "a1-spacer-height-spacer-8-xl-l-0",
+              "type": "float",
+              "value": 8,
+              "values": {
+                "Breakpoint S": 8,
+                "Breakpoint M": 8,
+                "Breakpoint L": 0,
+                "Breakpoint XL": 0
+              }
+            },
+            {
+              "name": "[A1] Spacer height/Spacer_16 (XL&L_0)",
+              "token": "a1-spacer-height-spacer-16-xl-l-0",
+              "type": "float",
+              "value": 16,
+              "values": {
+                "Breakpoint S": 16,
+                "Breakpoint M": 16,
+                "Breakpoint L": 0,
+                "Breakpoint XL": 0
+              }
+            },
+            {
+              "name": "[A1] Spacer height/Spacer_40 (XL&L_0)",
+              "token": "a1-spacer-height-spacer-40-xl-l-0",
+              "type": "float",
+              "value": 40,
+              "values": {
+                "Breakpoint S": 40,
+                "Breakpoint M": 40,
+                "Breakpoint L": 0,
+                "Breakpoint XL": 0
+              }
+            },
+            {
+              "name": "[A1] Form template/End of page spacer",
+              "token": "a1-form-template-end-of-page-spacer",
+              "type": "float",
+              "value": 48,
+              "values": {
+                "Breakpoint S": 48,
+                "Breakpoint M": 48,
+                "Breakpoint L": 56,
+                "Breakpoint XL": 56
+              }
+            },
+            {
+              "name": "[A1] Form cover/Left container width",
+              "token": "a1-form-cover-left-container-width",
+              "type": "float",
+              "value": 359,
+              "values": {
+                "Breakpoint S": 359,
+                "Breakpoint M": 736,
+                "Breakpoint L": 555.3300170898438,
+                "Breakpoint XL": 644
+              }
+            },
+            {
+              "name": "[A1] Form acknowledgement/Left container width",
+              "token": "a1-form-acknowledgement-left-container-width",
+              "type": "float",
+              "value": 359,
+              "values": {
+                "Breakpoint S": 359,
+                "Breakpoint M": 736,
+                "Breakpoint L": 317.3333435058594,
+                "Breakpoint XL": 368
+              }
+            },
+            {
+              "name": "[A1] Component/Section breakdown/Gap",
+              "token": "a1-component-section-breakdown-gap",
+              "type": "float",
+              "value": 16,
+              "values": {
+                "Breakpoint S": 16,
+                "Breakpoint M": 16,
+                "Breakpoint L": 24,
+                "Breakpoint XL": 24
+              }
+            },
+            {
+              "name": "[A1] Component/Accordion section stack/Form field width",
+              "token": "a1-component-accordion-section-stack-form-field-width",
+              "type": "float",
+              "value": 311,
+              "values": {
+                "Breakpoint S": 311,
+                "Breakpoint M": 688,
+                "Breakpoint L": 460,
+                "Breakpoint XL": 522
+              }
+            },
+            {
+              "name": "[A1] Form template/Page-level alert LR padding",
+              "token": "a1-form-template-page-level-alert-lr-padding",
+              "type": "float",
+              "value": 8,
+              "values": {
+                "Breakpoint S": 8,
+                "Breakpoint M": 8,
+                "Breakpoint L": 0,
+                "Breakpoint XL": 0
+              }
+            },
+            {
+              "name": "[A1] Component/Accordion section stack/Panel LR padding",
+              "token": "a1-component-accordion-section-stack-panel-lr-padding",
+              "type": "float",
+              "value": 16,
+              "values": {
+                "Breakpoint S": 16,
+                "Breakpoint M": 16,
+                "Breakpoint L": 4,
+                "Breakpoint XL": 18
+              }
+            },
+            {
+              "name": "[A1] Component/Accordion section stack/Grid layout margin",
+              "token": "a1-component-accordion-section-stack-grid-layout-margin",
+              "type": "float",
+              "value": 24,
+              "values": {
+                "Breakpoint S": 24,
+                "Breakpoint M": 24,
+                "Breakpoint L": 16,
+                "Breakpoint XL": 30
+              }
+            },
+            {
+              "name": "[A1] Component/Accordion section stack/Grid layout gutter",
+              "token": "a1-component-accordion-section-stack-grid-layout-gutter",
+              "type": "float",
+              "value": 16,
+              "values": {
+                "Breakpoint S": 16,
+                "Breakpoint M": 16,
+                "Breakpoint L": 24,
+                "Breakpoint XL": 24
+              }
+            },
+            {
+              "name": "[A1] Grid settings/Grid gutter",
+              "token": "a1-grid-settings-grid-gutter",
+              "type": "float",
+              "value": 16,
+              "values": {
+                "Breakpoint S": 16,
+                "Breakpoint M": 16,
+                "Breakpoint L": 24,
+                "Breakpoint XL": 24
+              }
+            },
+            {
+              "name": "[A1] Grid settings/Grid margin",
+              "token": "a1-grid-settings-grid-margin",
+              "type": "float",
+              "value": 16,
+              "values": {
+                "Breakpoint S": 16,
+                "Breakpoint M": 24,
+                "Breakpoint L": 16,
+                "Breakpoint XL": 30
+              }
+            },
+            {
+              "name": "[A1] Grid settings/Column count",
+              "token": "a1-grid-settings-column-count",
+              "type": "float",
+              "value": 6,
+              "values": {
+                "Breakpoint S": 6,
+                "Breakpoint M": 12,
+                "Breakpoint L": 12,
+                "Breakpoint XL": 12
+              }
+            },
+            {
+              "name": "[A1] Form acknowledgement/PayNow QR snippet gap",
+              "token": "a1-form-acknowledgement-paynow-qr-snippet-gap",
+              "type": "float",
+              "value": 8,
+              "values": {
+                "Breakpoint S": 8,
+                "Breakpoint M": 8,
+                "Breakpoint L": 24,
+                "Breakpoint XL": 24
+              }
+            },
+            {
+              "name": "[A1] Page-level/Nested container/4-col at XL & L",
+              "token": "a1-page-level-nested-container-4-col-at-xl-l",
+              "type": "float",
+              "value": 359,
+              "values": {
+                "Breakpoint S": 359,
+                "Breakpoint M": 736,
+                "Breakpoint L": 317.3299865722656,
+                "Breakpoint XL": 368
+              }
+            },
+            {
+              "name": "[A1] Page-level/Base container/4-col at XL & L",
+              "token": "a1-page-level-base-container-4-col-at-xl-l",
+              "type": "float",
+              "value": 359,
+              "values": {
+                "Breakpoint S": 359,
+                "Breakpoint M": 736,
+                "Breakpoint L": 328,
+                "Breakpoint XL": 388
+              }
+            }
+          ],
+          "strings": [
+            {
+              "name": "[A1] Breakpoint (BP) type/XL & L | M & S",
+              "token": "a1-breakpoint-bp-type-xl-l-m-s",
+              "type": "string",
+              "value": "M & S",
+              "values": {
+                "Breakpoint S": "M & S",
+                "Breakpoint M": "M & S",
+                "Breakpoint L": "XL & L",
+                "Breakpoint XL": "XL & L"
+              }
+            },
+            {
+              "name": "[A1] Breakpoint (BP) type/XL | L |  M | S",
+              "token": "a1-breakpoint-bp-type-xl-l-m-s",
+              "type": "string",
+              "value": "S",
+              "values": {
+                "Breakpoint S": "S",
+                "Breakpoint M": "M",
+                "Breakpoint L": "L",
+                "Breakpoint XL": "XL"
+              }
+            },
+            {
+              "name": "[A1] Breakpoint (BP) type/XL & L & M | S",
+              "token": "a1-breakpoint-bp-type-xl-l-m-s",
+              "type": "string",
+              "value": "S",
+              "values": {
+                "Breakpoint S": "S",
+                "Breakpoint M": "XL & L & M",
+                "Breakpoint L": "XL & L & M",
+                "Breakpoint XL": "XL & L & M"
+              }
+            },
+            {
+              "name": "[A1] Component/Global nav/Header breakpoint",
+              "token": "a1-component-global-nav-header-breakpoint",
+              "type": "string",
+              "value": "M & S",
+              "values": {
+                "Breakpoint S": "M & S",
+                "Breakpoint M": "M & S",
+                "Breakpoint L": "L",
+                "Breakpoint XL": "XL"
+              }
+            },
+            {
+              "name": "[A1] Component/Global nav/Footer breakpoint",
+              "token": "a1-component-global-nav-footer-breakpoint",
+              "type": "string",
+              "value": "M & S",
+              "values": {
+                "Breakpoint S": "M & S",
+                "Breakpoint M": "M & S",
+                "Breakpoint L": "L",
+                "Breakpoint XL": "XL"
+              }
+            },
+            {
+              "name": "[A1] Component/Global header/Only BP L different",
+              "token": "a1-component-global-header-only-bp-l-different",
+              "type": "string",
+              "value": "XL & M & S",
+              "values": {
+                "Breakpoint S": "XL & M & S",
+                "Breakpoint M": "XL & M & S",
+                "Breakpoint L": "L",
+                "Breakpoint XL": "XL & M & S"
+              }
+            },
+            {
+              "name": "[A1] Component/Global header/BP XL & L different",
+              "token": "a1-component-global-header-bp-xl-l-different",
+              "type": "string",
+              "value": "M & S",
+              "values": {
+                "Breakpoint S": "M & S",
+                "Breakpoint M": "M & S",
+                "Breakpoint L": "L",
+                "Breakpoint XL": "XL"
+              }
+            },
+            {
+              "name": "[A1] Breakpoint (BP) type/XL & L | M | S",
+              "token": "a1-breakpoint-bp-type-xl-l-m-s",
+              "type": "string",
+              "value": "S",
+              "values": {
+                "Breakpoint S": "S",
+                "Breakpoint M": "M",
+                "Breakpoint L": "XL & L",
+                "Breakpoint XL": "XL & L"
+              }
+            },
+            {
+              "name": "[A1] Form acknowledgement/Info snippet mobile variant",
+              "token": "a1-form-acknowledgement-info-snippet-mobile-variant",
+              "type": "string",
+              "value": "Left-aligned",
+              "values": {
+                "Breakpoint S": "Left-aligned",
+                "Breakpoint M": "Left-aligned",
+                "Breakpoint L": "N.A.",
+                "Breakpoint XL": "N.A."
+              }
+            }
+          ],
+          "booleans": [
+            {
+              "name": "[A1] Component/Global header/Show language selector",
+              "token": "a1-component-global-header-show-language-selector",
+              "type": "boolean",
+              "value": false,
+              "values": {
+                "Breakpoint S": false,
+                "Breakpoint M": false,
+                "Breakpoint L": true,
+                "Breakpoint XL": true
+              }
+            }
+          ]
+        }
+      },
+      "_D1 - Library only": {
+        "id": "VariableCollectionId:736:8010",
+        "modes": [
+          {
+            "id": "736:0",
+            "name": "Mode 1"
+          }
+        ],
+        "variables": {
+          "colors": [
+            {
+              "name": "Dimension note",
+              "token": "dimension-note",
+              "type": "color",
+              "value": "rgba(244, 82, 82, 0.16)"
+            },
+            {
+              "name": "Dimension background",
+              "token": "dimension-background",
+              "type": "color",
+              "value": "rgba(244, 82, 82, 0.16)"
+            },
+            {
+              "name": "Padding background",
+              "token": "padding-background",
+              "type": "color",
+              "value": "rgba(0, 245, 163, 0.24)"
+            }
+          ],
+          "numbers": [],
+          "strings": [
+            {
+              "name": "Single-line input/Input value",
+              "token": "single-line-input-input-value",
+              "type": "string",
+              "value": " "
+            }
+          ],
+          "booleans": []
+        }
+      }
+    },
+    "metadata": {
+      "exportDate": "2025-10-23T14:55:07.746Z",
+      "figmaFileKey": "unknown",
+      "fileName": "Design kit - Master",
+      "pluginVersion": "1.0.0",
+      "collectionsFound": 5,
+      "collectionsExported": 5
+    }
+  }
+}
